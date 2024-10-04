@@ -1,0 +1,186 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Button
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: Android
+      m_MaxTextureSize: 8192
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 65
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: d6de890c8ce7d4e47aef6e67354d7fc5, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 123ed030a1c324462a4ccf6168abc541, type: 3}
+  - {fileID: 21300000, guid: 64e66d50a131a4abaa8d4ebe129b2b72, type: 3}
+  - {fileID: 21300000, guid: 88f2a8b067da847ae8a3698aef800496, type: 3}
+  - {fileID: 21300000, guid: 421f361155f20450d8540ec47bdf138f, type: 3}
+  - {fileID: 21300000, guid: 39c33c81739d845b7872c2e59dc4a9a5, type: 3}
+  - {fileID: 21300000, guid: a78a26f1c21194ac0a932fb57a9141c9, type: 3}
+  - {fileID: 21300000, guid: 07c84562c94cf4aaf802ae84f25de0b0, type: 3}
+  - {fileID: 21300000, guid: 1d8bebf2c78f443af95a3268e5f48dc9, type: 3}
+  - {fileID: 21300000, guid: b0989503601bd4b619166a3e9bdf9ee2, type: 3}
+  - {fileID: 21300000, guid: cd696513575294d6595430990aad0026, type: 3}
+  - {fileID: 21300000, guid: efb6c9334e498404883cd7150d537d74, type: 3}
+  - {fileID: 21300000, guid: 31556e634a9844453a3799478e2f1b39, type: 3}
+  - {fileID: 21300000, guid: f0468ad3ca6b748958074ee4a538e93d, type: 3}
+  - {fileID: 21300000, guid: a093cb6459e9a447e85a2e5dc818fdca, type: 3}
+  - {fileID: 21300000, guid: 9436aa84ec3ab4b6cad066da73e203b3, type: 3}
+  - {fileID: 21300000, guid: 8a9247940e1eb451cb1573d4d45126c1, type: 3}
+  - {fileID: 21300000, guid: f31e471558e874980824732d44c29091, type: 3}
+  - {fileID: 21300000, guid: 672fef45da34647a8a9720328e492641, type: 3}
+  - {fileID: 21300000, guid: 675c35953fb7d41c89144b9219f6ac1b, type: 3}
+  - {fileID: 21300000, guid: 970233d5ae5d54be78324d227ee4184a, type: 3}
+  - {fileID: 21300000, guid: 27288c06623524835892fdb46ef2999f, type: 3}
+  - {fileID: 21300000, guid: 66d13736f0c8f440c87eb2b808f6ce88, type: 3}
+  - {fileID: 21300000, guid: 5d18d83640df34f4eaa5a92e4c99c650, type: 3}
+  - {fileID: 21300000, guid: 3b138056c48cc4b0b9212a17f2770603, type: 3}
+  - {fileID: 21300000, guid: ba7551a68cfcf49b893ff598783f9197, type: 3}
+  - {fileID: 21300000, guid: 7ad5c6b6cea24410bb138a2ec3fc23c1, type: 3}
+  - {fileID: 21300000, guid: e9c69707719574c84932221c997ebb47, type: 3}
+  - {fileID: 21300000, guid: f02b3c472f30743f4b948b679fbe4dea, type: 3}
+  - {fileID: 21300000, guid: 6e9acb87f7dfc47148336a2c09d48813, type: 3}
+  - {fileID: 21300000, guid: 041db497dc0534e44bf357d21ff8e084, type: 3}
+  - {fileID: 21300000, guid: 6ee765d7809844ad1933b2788d7929bc, type: 3}
+  - {fileID: 21300000, guid: 211fbaf7fa0004e158870d1ecb769fd2, type: 3}
+  - {fileID: 21300000, guid: 4cc9a5a845971482ba3d802b78e4619b, type: 3}
+  - {fileID: 21300000, guid: 78e600d83ad6145609161206e7a63e29, type: 3}
+  - {fileID: 21300000, guid: feed8ee8cb5154064ad65862e44f1d8b, type: 3}
+  - {fileID: 21300000, guid: fce383f822fcf464ca2ef6718bcf46f5, type: 3}
+  - {fileID: 21300000, guid: 4e02aff8f7a314408abd64767fd9dca2, type: 3}
+  - {fileID: 21300000, guid: aa5c3f19bd2f14b32ba1992e4e83d1de, type: 3}
+  - {fileID: 21300000, guid: 791c526937096414e963087cf56599d7, type: 3}
+  - {fileID: 21300000, guid: e9f0fe7923c944dea801cf80dd28a9ca, type: 3}
+  - {fileID: 21300000, guid: 19f84389193584d7ab2d7846ae4c8ede, type: 3}
+  - {fileID: 21300000, guid: 0c95fb997bf584e9dbe570f190dcef37, type: 3}
+  - {fileID: 21300000, guid: a32adc99db6104fdebad0ae11907ea82, type: 3}
+  - {fileID: 21300000, guid: 52d7ce0abbb8844bd92343e9cef783b2, type: 3}
+  - {fileID: 21300000, guid: ac6239bac0da943bf98d72d72fdca5c7, type: 3}
+  - {fileID: 21300000, guid: a255070bca0f340ad90d11b6bfd6fde6, type: 3}
+  - {fileID: 21300000, guid: 906a104b67bbe476ba0bc6bdae09fc44, type: 3}
+  - {fileID: 21300000, guid: 2550c34bcb002466682343c8e43106c7, type: 3}
+  - {fileID: 21300000, guid: b1ee30abc605146f9a2ea25d334aa6aa, type: 3}
+  - {fileID: 21300000, guid: fde0e4ebc7b9c43ba8d27701233afcb1, type: 3}
+  - {fileID: 21300000, guid: 5e08403c84de546338ae2c585d60d276, type: 3}
+  - {fileID: 21300000, guid: 3b5eea0d0618d4b5990daedbe44c8847, type: 3}
+  - {fileID: 21300000, guid: 8e54a21d46f1e4ce78d6db11042187a4, type: 3}
+  - {fileID: 21300000, guid: f7af273d68dc84f729533b7b567e688a, type: 3}
+  - {fileID: 21300000, guid: 27022e5d1602c427aa507130eaae8b5b, type: 3}
+  - {fileID: 21300000, guid: f9f1b64e6369b46c485fca9431befb71, type: 3}
+  - {fileID: 21300000, guid: b4a8919e755f340cfbf4222fdcf2af47, type: 3}
+  - {fileID: 21300000, guid: 9aa2a0cee233f40aab034a146d8bb4b6, type: 3}
+  - {fileID: 21300000, guid: ff82a3ce8d872461c9afabb175c42a35, type: 3}
+  - {fileID: 21300000, guid: a65ce01f375554476acaef3c5d8a58a1, type: 3}
+  - {fileID: 21300000, guid: dd01d53f3253e4265af152ab692b3ed5, type: 3}
+  - {fileID: 21300000, guid: 4e4a668f257574e13a1d4db21be9f156, type: 3}
+  - {fileID: 21300000, guid: f9e3259f8f2d345fbb7caf75dbdcbd0c, type: 3}
+  - {fileID: 21300000, guid: 21a720df3e95d4e9cbf40d621813f806, type: 3}
+  - {fileID: 21300000, guid: d08f60ef09739438ca3ab0cde6f4720f, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Btn_IconButton_Circle_90_purple
+  - Btn_Rectangle00_n_Yellow
+  - Btn_Rectangle01
+  - Btn_Rectangle00_n_Gray
+  - Btn_Rectangle00_d_White
+  - Btn_Rectangle03_Blue3
+  - Btn_Rectangle03_White2
+  - Btn_IconButton_Circle_90
+  - Btn_MenuButton_Rectangle00_n
+  - Btn_MenuButton_Rectangle01
+  - Btn_Rectangle00_n_Orange
+  - Btn_MenuButton_Rectangle03_White1
+  - Btn_Rectangle00_n_White2
+  - Btn_Rectangle02_White1
+  - Btn_MenuButton_Rectangle03_Blue
+  - Btn_IconButton_Circle_359_White1
+  - Btn_Rectangle03_Blue2
+  - Btn_Rectangle04_Navy
+  - Btn_Rectangle04_Green
+  - Btn_IconButton_Square
+  - Btn_MenuButton_Rectangle03_White2
+  - Btn_IconButton_Circle_105
+  - Btn_IconButton_Circle_90_White1
+  - Btn_Rectangle00_n_Mint
+  - Btn_MenuButton_Rectangle00_s
+  - Btn_MenuButton_Rectangle02_White
+  - Btn_IconButton_Circle_90
+  - Btn_Rectangle02_White2
+  - Btn_Rectangle00_d
+  - Btn_Rectangle03_Green
+  - Btn_MenuButton_Rectangle03_Purple
+  - Btn_Rectangle00_n_Purple
+  - Btn_IconButton_Circle_359
+  - Btn_Rectangle00_d
+  - Btn_IconButton_Circle_121
+  - Btn_IconButton_Square_White
+  - Btn_Rectangle04_White
+  - Btn_IconButton_Circle_105_White
+  - Btn_Rectangle00_n_Red
+  - Btn_Rectangle04_Transpar
+  - Btn_Rectangle00_n_Blue
+  - Btn_IconButton_Circle_359_White2
+  - Btn_Rectangle03_White1
+  - Btn_MenuButton_Rectangle01
+  - Btn_Rectangle04_Sky
+  - Btn_IconButton_Square
+  - Btn_Rectangle00_n_Navy
+  - Btn_MenuButton_Rectangle00_n
+  - Btn_MenuButton_Rectangle02
+  - Btn_MenuButton_Rectangle00_s
+  - Btn_MenuButton_Rectangle03_Green
+  - Btn_MenuButton_Rectangle00_White
+  - Btn_IconButton_Circle_90_White2
+  - Btn_IconButton_Circle_105
+  - Btn_Rectangle02_Blue
+  - Btn_Rectangle00_n_Pink
+  - Btn_MenuButton_Rectangle03_Yellow
+  - Btn_Rectangle00_n_White1
+  - Btn_Rectangle03_Blue1
+  - Btn_MenuButton_Rectangle01_White
+  - Btn_Rectangle02_Orange
+  - Btn_MenuButton_Rectangle02
+  - Btn_IconButton_Circle_90_red
+  - Btn_IconButton_Circle_121_White
+  - Btn_Rectangle00_n_Green
+  m_RenderDataMap: {}
+  m_Tag: Button
+  m_IsVariant: 0

@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93fa63ddde0033649b7b28b076596d48, type: 3}
+  m_Name: LevelProfileSO X
+  m_EditorClassIdentifier: 
+  textAsset: {fileID: 4900000, guid: 7baacc3c758f0094c9cc0421110af25c, type: 3}
+  startingCards:
+  - id: 49
+    amount: 2
+  - id: 48
+    amount: 2
+  - id: 47
+    amount: 2
+  - id: 46
+    amount: 2
+  - id: 45
+    amount: 2
+  - id: 44
+    amount: 2
+  - id: 43
+    amount: 2
+  - id: 42
+    amount: 2
+  - id: 41
+    amount: 2
+  - id: 40
+    amount: 2
+  - id: 39
+    amount: 2
+  - id: 38
+    amount: 2
+  - id: 37
+    amount: 2
+  - id: 36
+    amount: 2
+  - id: 35
+    amount: 2
+  - id: 34
+    amount: 2
+  - id: 33
+    amount: 2
+  - id: 32
+    amount: 2
+  - id: 31
+    amount: 2
+  - id: 30
+    amount: 2
+  alignType: 4
+  timeSystem:
+    maxPlayTime: 150
+    oneStar: 0.2
+    twoStar: 0.5
+    threeStar: 0.7
