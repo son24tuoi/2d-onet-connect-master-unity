@@ -9,6 +9,7 @@ public class SafeArea : MonoBehaviour
     private Vector2 m_minAnchor;
     private Vector2 m_maxAnchor;
 
+    [ContextMenu(nameof(Awake))]
     private void Awake()
     {
         m_rectTransform = GetComponent<RectTransform>();
