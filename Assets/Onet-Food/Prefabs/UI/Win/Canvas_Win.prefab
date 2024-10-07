@@ -1038,7 +1038,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2614456858416227134}
-  - component: {fileID: 2614456858416227133}
+  - component: {fileID: 1152043704919608224}
   m_Layer: 5
   m_Name: SafeArea
   m_TagString: Untagged
@@ -1068,7 +1068,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2614456858416227133
+--- !u!114 &1152043704919608224
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1077,9 +1077,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2614456858416227135}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49284184c8769d045a90b5f83990e097, type: 3}
+  m_Script: {fileID: 11500000, guid: c97afc556caea1c44969477eb7ddec74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ConformX: 1
+  ConformY: 0
+  Logging: 0
 --- !u!1 &3093242110515588342
 GameObject:
   m_ObjectHideFlags: 0
@@ -3319,11 +3322,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8668611777339854750, guid: ba5a6fc729c7a294d85e31c2d5b6f8dc, type: 3}
       propertyPath: _bursts.Array.data[0].used
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8668611777339854751, guid: ba5a6fc729c7a294d85e31c2d5b6f8dc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1200
+      value: 1050
       objectReference: {fileID: 0}
     - target: {fileID: 8668611777613258537, guid: ba5a6fc729c7a294d85e31c2d5b6f8dc, type: 3}
       propertyPath: _startSpeed.m_ConstantMax
@@ -3335,11 +3338,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8668611777613258537, guid: ba5a6fc729c7a294d85e31c2d5b6f8dc, type: 3}
       propertyPath: _bursts.Array.data[0].used
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8668611777613258538, guid: ba5a6fc729c7a294d85e31c2d5b6f8dc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1200
+      value: 1050
       objectReference: {fileID: 0}
     - target: {fileID: 8668611778594459328, guid: ba5a6fc729c7a294d85e31c2d5b6f8dc, type: 3}
       propertyPath: m_Pivot.x
