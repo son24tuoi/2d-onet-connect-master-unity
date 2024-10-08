@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fa63ddde0033649b7b28b076596d48, type: 3}
   m_Name: LevelProfileSO 1
   m_EditorClassIdentifier: 
-  textAsset: {fileID: 4900000, guid: f32884d373f5b8946b94db499916f65c, type: 3}
+  textAsset: {fileID: 4900000, guid: ffd67c6441bb69f4b8e5b9d79934c38d, type: 3}
   startingCards:
   - id: 0
     amount: 2
@@ -21,6 +21,58 @@ MonoBehaviour:
   - id: 2
     amount: 2
   - id: 3
+    amount: 2
+  - id: 4
+    amount: 2
+  - id: 5
+    amount: 2
+  - id: 6
+    amount: 2
+  - id: 7
+    amount: 2
+  - id: 8
+    amount: 2
+  - id: 9
+    amount: 2
+  - id: 10
+    amount: 2
+  - id: 11
+    amount: 2
+  - id: 12
+    amount: 2
+  - id: 13
+    amount: 2
+  - id: 14
+    amount: 2
+  - id: 15
+    amount: 2
+  - id: 16
+    amount: 2
+  - id: 17
+    amount: 2
+  - id: 18
+    amount: 2
+  - id: 19
+    amount: 2
+  - id: 20
+    amount: 2
+  - id: 21
+    amount: 2
+  - id: 22
+    amount: 2
+  - id: 23
+    amount: 2
+  - id: 24
+    amount: 2
+  - id: 25
+    amount: 2
+  - id: 26
+    amount: 2
+  - id: 27
+    amount: 2
+  - id: 28
+    amount: 2
+  - id: 29
     amount: 2
   alignType: 0
   timeSystem:

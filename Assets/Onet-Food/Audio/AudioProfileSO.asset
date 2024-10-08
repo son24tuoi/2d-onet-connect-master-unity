@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: AudioProfileSO
   m_EditorClassIdentifier: 
   musicSounds:
-  - name: Footsteps In The Snow
-    clip: {fileID: 8300000, guid: ef55c77d8167fc64e8b50c651fad5191, type: 3}
-  - name: Memories Of Winter
-    clip: {fileID: 8300000, guid: fc69cdb415b18f34bb4a2164e4f7fe8d, type: 3}
   - name: Snowflake Dance
     clip: {fileID: 8300000, guid: 8589f42dbc5818747b2a1d7d1be49ed7, type: 3}
+  - name: Memories Of Winter
+    clip: {fileID: 8300000, guid: fc69cdb415b18f34bb4a2164e4f7fe8d, type: 3}
+  - name: Footsteps In The Snow
+    clip: {fileID: 8300000, guid: ef55c77d8167fc64e8b50c651fad5191, type: 3}
   sfxSounds:
   - name: Click
     clip: {fileID: 8300000, guid: c023fc8a50476d449b895bcdb187636e, type: 3}

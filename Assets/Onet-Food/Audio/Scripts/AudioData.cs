@@ -33,7 +33,7 @@ public class AudioData
     public AudioData()
     {
         musicIndex = 0;
-        musicVolume = 1f;
-        sfxVolume = 1f;
+        musicVolume = 0.5f;
+        sfxVolume = 0.5f;
     }
 }
