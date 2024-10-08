@@ -14,6 +14,9 @@ public class TestProfileSO : ScriptableObject
 
     public bool IsDeviceTest()
     {
+#if UNITY_EDITOR
+        return true;
+#else
         string deviceId = SystemInfo.deviceUniqueIdentifier;
 
         for (int i = 0; i < deviceIdTest.Length; i++)
@@ -23,6 +26,7 @@ public class TestProfileSO : ScriptableObject
         }
 
         return false;
+#endif
     }
 
     public void Remote(string configData)

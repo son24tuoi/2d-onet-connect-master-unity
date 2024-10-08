@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5473051103681121890}
   - component: {fileID: 7021380394633068856}
   - component: {fileID: 6153885981301843931}
+  - component: {fileID: 8831628144170384042}
   - component: {fileID: 2013629539510287029}
   m_Layer: 5
   m_Name: ComboUI
@@ -80,6 +81,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 2
+--- !u!225 &8831628144170384042
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4113788475133565437}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!114 &2013629539510287029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,6 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5de06e1d40a89b45b42457c4eb6032a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 8831628144170384042}
   slider: {fileID: 7965748763711578831}
   rewardTMP: {fileID: 581653724827330569}
   titleTMP: {fileID: 1982175243171831968}

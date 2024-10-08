@@ -18,6 +18,8 @@ public class CoinStatus : MyMonoBehaviour, IEventHandlerWithData, IEventHandler
         SetAmountText(DataManager.Data.itemsData.CoinAmount);
 
         SetupFreeLabel();
+
+        DataManager.CheckTime();
     }
 
     private void OnDisable()

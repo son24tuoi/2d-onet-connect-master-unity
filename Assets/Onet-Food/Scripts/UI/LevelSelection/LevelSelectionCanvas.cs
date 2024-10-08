@@ -7,7 +7,6 @@ using UnityEngine;
 public class LevelSelectionCanvas : Popup
 {
     [Header("Element")]
-    [SerializeField] private ChestProgressView chestProgressView;
     [SerializeField] private TextMeshProUGUI playButtonTMP;
 
     [Space(10)]
@@ -52,8 +51,6 @@ public class LevelSelectionCanvas : Popup
 
     public void Init()
     {
-        chestProgressView.Setup(DataManager.Data.chestData.ChestIndex, DataManager.Data.itemsData.StarAmount);
-
         int levelIndex = DataManager.Data.levelData.LevelIndex;
         m_levelIndex = (levelIndex <= levelManagerProfileSO.MaxLevelIndex) ? levelIndex : -1;
         playButtonTMP.SetText("Level " + DataManager.GetLevelName(m_levelIndex));

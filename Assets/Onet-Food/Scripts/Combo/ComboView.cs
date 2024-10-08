@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class ComboView : MonoBehaviour
 {
     [Header("Element")]
+    [SerializeField] private CanvasGroup canvasGroup;
     [SerializeField] private Slider slider;
     [SerializeField] private TextMeshProUGUI rewardTMP;
     [SerializeField] private TextMeshProUGUI titleTMP;
@@ -27,7 +28,7 @@ public class ComboView : MonoBehaviour
         m_showPos = transform.position;
         m_hidePos = m_showPos + GetComponent<RectTransform>().rect.width * Vector3.right;
 
-        transform.position = m_hidePos;
+        HideImmediate();
     }
 
     private void OnEnable()
@@ -89,7 +90,7 @@ public class ComboView : MonoBehaviour
         {
             return;
         }
-
+        canvasGroup.alpha = 1f;
         Tween.Position(transform, m_hidePos, m_showPos, 0.1f);
     }
 
@@ -100,6 +101,16 @@ public class ComboView : MonoBehaviour
             return;
         }
 
-        Tween.Position(transform, m_showPos, m_hidePos, 0.1f);
+        Tween.Position(transform, m_showPos, m_hidePos, 0.1f)
+            .OnComplete(() =>
+            {
+                Tween.Alpha(canvasGroup, 1f, 0f, 0.3f);
+            });
+    }
+
+    public void HideImmediate()
+    {
+        transform.position = m_hidePos;
+        canvasGroup.alpha = 0f;
     }
 }
