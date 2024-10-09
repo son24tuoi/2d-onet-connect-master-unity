@@ -94,11 +94,11 @@ public class TimerView : MonoBehaviour
 
     public void SetupStar()
     {
-        float width = m_starContainer.rect.width;
+        float height = m_starContainer.rect.height;
 
-        m_starImages[0].rectTransform.anchoredPosition = new Vector2(TimeSystem.oneStar * width, 0);
-        m_starImages[1].rectTransform.anchoredPosition = new Vector2(TimeSystem.twoStar * width, 0);
-        m_starImages[2].rectTransform.anchoredPosition = new Vector2(TimeSystem.threeStar * width, 0);
+        m_starImages[0].rectTransform.anchoredPosition = new Vector2(0, TimeSystem.oneStar * height);
+        m_starImages[1].rectTransform.anchoredPosition = new Vector2(0, TimeSystem.twoStar * height);
+        m_starImages[2].rectTransform.anchoredPosition = new Vector2(0, TimeSystem.threeStar * height);
 
         EventManager.Instance.Trigger(new EventData<Vector3[]>(
             EventID.ThreeStarsPosition,

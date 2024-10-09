@@ -136,7 +136,7 @@ public class LevelController : MyMonoBehaviour
 
     private void SetupCamera()
     {
-        Vector3 cameraPos = new Vector3((float)(graph.Width - 1) / 2f - 0.9f, (float)(graph.Height - 1) / 2f + 0.8f, -10);
+        Vector3 cameraPos = new Vector3((float)(graph.Width - 1) / 2f, (float)(graph.Height - 1) / 2f, -10);
 
         float verticalSize = (float)graph.Height / 2f + Settings.BorderSizeY;
         float horizontalSize = ((float)graph.Width / 2f + Settings.BorderSizeX) / Camera.main.aspect;
