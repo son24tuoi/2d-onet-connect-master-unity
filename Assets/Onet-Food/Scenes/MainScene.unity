@@ -1802,6 +1802,7 @@ GameObject:
   - component: {fileID: 1187946653}
   - component: {fileID: 1187946654}
   - component: {fileID: 1187946655}
+  - component: {fileID: 1187946656}
   m_Layer: 0
   m_Name: --- GAMEPLAY ---
   m_TagString: Untagged
@@ -1878,6 +1879,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rateCanvasPrefab: {fileID: 2387335239375420009, guid: 2eaab7bd48708c1478e7aa29db42ff18, type: 3}
+--- !u!114 &1187946656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187946651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d25ef1337ec582343a1629651e4402f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1196132795 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7206321528211272273, guid: f85d2d9c70c1a8a41ac3b7d8775926e4, type: 3}

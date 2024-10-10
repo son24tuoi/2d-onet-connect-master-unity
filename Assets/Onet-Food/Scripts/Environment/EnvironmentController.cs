@@ -29,10 +29,19 @@ public class EnvironmentController : MonoBehaviour
 
     public void AdjustCamera(Vector3 position, float size)
     {
-        mainCamera.transform.position = position;
-        mainCamera.orthographicSize = size;
+        SetPositionCamera(position);
+        SetSizeCamera(size);
+    }
 
+    public void SetPositionCamera(Vector3 position)
+    {
+        mainCamera.transform.position = position;
         background.transform.position = position + Vector3.forward * 10;
+    }
+
+    public void SetSizeCamera(float size)
+    {
+        mainCamera.orthographicSize = size;
         background.transform.localScale = Vector3.one * (size / m_originCameraSize);
     }
 }

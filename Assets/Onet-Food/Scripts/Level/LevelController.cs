@@ -37,6 +37,8 @@ public class LevelController : MyMonoBehaviour
     private int m_amountCard;
     private int m_amountCardEffect;
 
+    private bool m_isPlaying;
+
     public bool IsClearCardEffect
     {
         get => m_amountCardEffect <= 0;
@@ -52,6 +54,8 @@ public class LevelController : MyMonoBehaviour
         PlayerSelection.OnPathFindingEvent += FindPath;
 
         PathView.OnDoneShowEvent += CheckWin;
+
+        ScreenDetector.OnChangeScreenOrientationEvent += SetPositionCamera;
     }
 
     private void OnDestroy()
@@ -59,6 +63,8 @@ public class LevelController : MyMonoBehaviour
         PlayerSelection.OnPathFindingEvent -= FindPath;
 
         PathView.OnDoneShowEvent -= CheckWin;
+
+        ScreenDetector.OnChangeScreenOrientationEvent -= SetPositionCamera;
     }
 
     public void Init(LevelProfileSO levelProfileSO)
@@ -76,11 +82,14 @@ public class LevelController : MyMonoBehaviour
                 Lose();
             });
         timer.StartTimer();
+        m_isPlaying = true;
 
         combo.Init();
 
         gamePlayCanvas.gameObject.SetActive(true);
         gamePlayCanvas.Init();
+
+        SetupCamera();
 
         FirebaseManager.firebaseAnalytics.EventLevelStart(gameProfileSO.currentLevelIndex);
     }
@@ -103,8 +112,6 @@ public class LevelController : MyMonoBehaviour
                 graphView.Init(graph);
                 graphView.ShowCards(graph.walls, cardData.idCards);
             }
-
-            SetupCamera();
 
             if (pathfinder != null)
             {
@@ -136,12 +143,29 @@ public class LevelController : MyMonoBehaviour
 
     private void SetupCamera()
     {
-        Vector3 cameraPos = new Vector3((float)(graph.Width - 1) / 2f, (float)(graph.Height - 1) / 2f, -10);
+        SetPositionCamera();
+        SetSizeCamera();
+    }
 
+    private void SetPositionCamera()
+    {
+        if (!m_isPlaying)
+            return;
+
+        Vector3 cameraPos = new Vector3((float)(graph.Width - 1) / 2f, (float)(graph.Height - 1) / 2f, -10);
+        Debug.Log("cameraPos: " + cameraPos);
+        EnvironmentController.SetPositionCamera(cameraPos);
+        Vector3 offset = Vector3.right * (EnvironmentController.mainCamera.ScreenToWorldPoint(gamePlayCanvas.playingArea.position).x - cameraPos.x);
+        Debug.Log("offset: " + offset);
+        EnvironmentController.SetPositionCamera(cameraPos - offset);
+    }
+
+    private void SetSizeCamera()
+    {
         float verticalSize = (float)graph.Height / 2f + Settings.BorderSizeY;
         float horizontalSize = ((float)graph.Width / 2f + Settings.BorderSizeX) / Camera.main.aspect;
         float orthographicSize = (verticalSize > horizontalSize) ? verticalSize : horizontalSize;
-        EnvironmentController.AdjustCamera(cameraPos, orthographicSize);
+        EnvironmentController.SetSizeCamera(orthographicSize);
     }
 
     public void FindPath(GameObject go1, GameObject go2)
@@ -263,6 +287,7 @@ public class LevelController : MyMonoBehaviour
         {
             gamePlayCanvas.Interaction = true;
             OnWinEvent?.Invoke();
+            m_isPlaying = false;
         });
 
         FirebaseManager.firebaseAnalytics.EventLevelEnd(gameProfileSO.currentLevelIndex, gameProfileSO.elapsedSeconds);
@@ -270,6 +295,7 @@ public class LevelController : MyMonoBehaviour
 
     public void Lose()
     {
+        m_isPlaying = false;
         OnLoseEvent?.Invoke();
     }
 
@@ -281,6 +307,7 @@ public class LevelController : MyMonoBehaviour
         }
 
         timer.StopTimer();
+        m_isPlaying = false;
 
         starCounter.StopAll();
     }

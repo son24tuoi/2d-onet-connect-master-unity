@@ -8,6 +8,7 @@ public class GamePlayCanvas : MonoBehaviour
     [Header("Element")]
     [SerializeField] private TextMeshProUGUI levelTMP;
     [SerializeField] private TimerView timerView;
+    public RectTransform playingArea;
     [SerializeField] private GameObject noInteraction;
 
     [Space(5)]
