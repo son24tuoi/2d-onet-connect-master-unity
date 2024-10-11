@@ -108,9 +108,9 @@ public class StarCounter : MonoBehaviour, IEventHandlerWithData
         float elapsed = 0f;
         int preSeconds = (int)start;
 
-        float timeThreeStar = timeProfileSO.timeSystem.maxPlayTime - timeProfileSO.timeSystem.TimeThreeStar;
-        float timeTwoStar = timeProfileSO.timeSystem.maxPlayTime - timeProfileSO.timeSystem.TimeTwoStar;
-        float timeOneStar = timeProfileSO.timeSystem.maxPlayTime - timeProfileSO.timeSystem.TimeOneStar;
+        float timeThreeStar = timeProfileSO.timerData.Duration - timeProfileSO.TimeThreeStar;
+        float timeTwoStar = timeProfileSO.timerData.Duration - timeProfileSO.TimeTwoStar;
+        float timeOneStar = timeProfileSO.timerData.Duration - timeProfileSO.TimeOneStar;
 
         float moveTime = 0.2f;
         float scaleDuration = 0.1f;

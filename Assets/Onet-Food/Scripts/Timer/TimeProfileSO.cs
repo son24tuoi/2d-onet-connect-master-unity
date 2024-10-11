@@ -14,6 +14,12 @@ public class TimeProfileSO : ScriptableObject
     [Header("Timer")]
     public TimerData timerData;
 
+    public float TimeOneStar => timeSystem.oneStar * timerData.Duration;
+
+    public float TimeTwoStar => timeSystem.twoStar * timerData.Duration;
+
+    public float TimeThreeStar => timeSystem.threeStar * timerData.Duration;
+
     public void Setup(TimeSystem timeSystem)
     {
         this.timeSystem = timeSystem;
@@ -35,15 +41,15 @@ public class TimeProfileSO : ScriptableObject
 
     public int GetStar()
     {
-        if (timerData.Remaining >= timeSystem.TimeThreeStar)
+        if (timerData.Remaining >= TimeThreeStar)
         {
             return 3;
         }
-        else if (timerData.Remaining >= timeSystem.TimeTwoStar)
+        else if (timerData.Remaining >= TimeTwoStar)
         {
             return 2;
         }
-        else if (timerData.Remaining >= timeSystem.TimeOneStar)
+        else if (timerData.Remaining >= TimeOneStar)
         {
             return 1;
         }
@@ -83,9 +89,9 @@ public class TimeProfileSO : ScriptableObject
             GUILayout.Label("Quick Access", labelStyle);
 
             GUILayout.Box("Get Stars: " + target.GetStar().ToString());
-            GUILayout.Box("Remaining Time 3 Star: " + target.timeSystem.TimeThreeStar.ToString());
-            GUILayout.Box("Remaining Time 2 Star: " + target.timeSystem.TimeTwoStar.ToString());
-            GUILayout.Box("Remaining Time 1 Star: " + target.timeSystem.TimeOneStar.ToString());
+            GUILayout.Box("Remaining Time 3 Star: " + target.TimeThreeStar.ToString());
+            GUILayout.Box("Remaining Time 2 Star: " + target.TimeTwoStar.ToString());
+            GUILayout.Box("Remaining Time 1 Star: " + target.TimeOneStar.ToString());
         }
     }
 #endif

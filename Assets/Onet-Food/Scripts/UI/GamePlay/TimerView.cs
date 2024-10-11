@@ -51,8 +51,8 @@ public class TimerView : MonoBehaviour
 
     public void Setup()
     {
-        SetupStar();
         SetupSlider();
+        SetupStar();
 
         m_updateRoutine = StartCoroutine(IEUpdate());
     }
@@ -67,6 +67,10 @@ public class TimerView : MonoBehaviour
     private void MoreTime(int seconds)
     {
         m_slider.maxValue = TimerData.Duration;
+
+        m_timeOneStar = timeProfileSO.TimeOneStar;
+        m_timeTwoStar = timeProfileSO.TimeTwoStar;
+        m_timeThreeStar = timeProfileSO.TimeThreeStar;
 
         TextPrefab textPrefab = ObjectPool.Instance.GetTextObject().GetComponent<TextPrefab>();
 
@@ -109,8 +113,8 @@ public class TimerView : MonoBehaviour
             }
         ));
 
-        ShowStar(TimeSystem.maxPlayTime);
-        ChangeStar(TimeSystem.maxPlayTime);
+        ShowStar(timeProfileSO.timerData.Duration);
+        ChangeStar(timeProfileSO.timerData.Duration);
     }
 
     public void SetupSlider()
@@ -118,9 +122,9 @@ public class TimerView : MonoBehaviour
         m_slider.maxValue = TimerData.Duration;
         m_slider.value = TimerData.Duration;
 
-        m_timeOneStar = timeProfileSO.timeSystem.TimeOneStar;
-        m_timeTwoStar = timeProfileSO.timeSystem.TimeTwoStar;
-        m_timeThreeStar = timeProfileSO.timeSystem.TimeThreeStar;
+        m_timeOneStar = timeProfileSO.TimeOneStar;
+        m_timeTwoStar = timeProfileSO.TimeTwoStar;
+        m_timeThreeStar = timeProfileSO.TimeThreeStar;
     }
 
     public IEnumerator IEUpdate()
@@ -162,6 +166,7 @@ public class TimerView : MonoBehaviour
 
     public void ShowStar(float value)
     {
+        Debug.Log("aaaaaaaaaaaaaa");
         m_starImages[2].gameObject.SetActive(value >= m_timeThreeStar);
         m_starImages[1].gameObject.SetActive(value >= m_timeTwoStar);
         m_starImages[0].gameObject.SetActive(value >= m_timeOneStar);
