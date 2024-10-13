@@ -11,14 +11,11 @@ public class LevelManager : MonoBehaviour
     public GameProfileSO gameProfileSO;
 
     [Header("Element")]
-    private LevelController m_levelController;
+    [SerializeField] private LevelController levelController;
 
-    public Timer Timer => m_levelController.timer;
+    public Timer Timer => levelController.timer;
 
-    private void Awake()
-    {
-        m_levelController = GetComponent<LevelController>();
-    }
+    public LevelData LevelData => DataManager.Instance.Data.levelData;
 
     public void LoadLevel(int index)
     {
@@ -36,19 +33,35 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    public void LoadProgressLevel()
+    {
+        LoadProgressLevel(LevelData.LevelIndex, LevelData.NodeGrid.GetMap(), LevelData.IdCards);
+    }
+
+    public void LoadProgressLevel(int index, int[,] map, int[] idCards)
+    {
+        gameProfileSO.currentLevelIndex = index;
+        levelController.Init(
+            levelManagerProfileSO.GetLevelProfileSO(index),
+            map, idCards,
+            LevelData.ElapsedSeconds,
+            LevelData.StarsReceived,
+            LevelData.AmountMatch);
+    }
+
     public void LoadRealLevel(int index)
     {
-        m_levelController.Init(levelManagerProfileSO.GetLevelProfileSO(index));
+        levelController.Init(levelManagerProfileSO.GetLevelProfileSO(index));
     }
 
     public void LoadRandomLevel()
     {
-        m_levelController.Init(levelManagerProfileSO.GetBonusLevelProfileSO());
+        levelController.Init(levelManagerProfileSO.GetBonusLevelProfileSO());
     }
 
     public void Clear()
     {
-        m_levelController.Clear();
+        levelController.Clear();
     }
 
     public async void CheckShowTutorialGamePlay(int levelIndex)

@@ -11,4 +11,5 @@ public enum EventID
     UseSupportItem = 8,
     ShopCanvas = 9,
     ReceiveFreeCoin = 10,
+    UpdateProgressLevel,
 }

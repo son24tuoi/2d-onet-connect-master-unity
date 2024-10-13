@@ -49,7 +49,7 @@ public class AdManager : MonoBehaviour
 
     private IAdData _iAdData;
 
-    private ILevelData _iLevelData;
+    private LevelData _levelData;
 
     private void Awake()
     {
@@ -102,7 +102,7 @@ public class AdManager : MonoBehaviour
     private void Init()
     {
         _iAdData = DataManager.Data.adData;
-        _iLevelData = DataManager.Data.levelData;
+        _levelData = DataManager.Data.levelData;
     }
 
     private void OnAppStateChanged(AppState state)
@@ -171,7 +171,7 @@ public class AdManager : MonoBehaviour
     public void CheckShowInterstitialAd(Action onClose, Action onNotReady)
     {
         if (RemoveAd ||
-            !adProfileSO.EnableInterstitialAd(_iLevelData.LevelIndex + 1, DateTime.Now.Ticks, _iAdData.InterstitialAdTime))
+            !adProfileSO.EnableInterstitialAd(_levelData.LevelIndex + 1, DateTime.Now.Ticks, _iAdData.InterstitialAdTime))
         {
             onNotReady?.Invoke();
             return;

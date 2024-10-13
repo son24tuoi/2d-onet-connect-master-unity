@@ -69,4 +69,9 @@ public class Timer : MonoBehaviour
     {
         timeProfileSO.AddDuration(seconds);
     }
+
+    public void SetElapsedSeconds(float seconds)
+    {
+        timeProfileSO.timerData.elapsedSeconds = seconds;
+    }
 }

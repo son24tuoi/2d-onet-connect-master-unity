@@ -26,8 +26,6 @@ public class PlayLevelCanvas : Popup
 
         infoTMP.SetText("Break all the squares");
 
-        levelInfo.Setup(LevelData.GetStarWin(levelIndex), LevelData.GetHighScore(levelIndex));
-
         LevelProfileSO levelProfileSO = levelManagerProfileSO.GetLevelProfileSO(m_levelIndex);
 
         timeTMP.SetText(levelProfileSO.timeSystem.GetTimePlay());
@@ -45,5 +43,14 @@ public class PlayLevelCanvas : Popup
     public void OnClickExitButton()
     {
         base.Exit();
+    }
+
+    public void OnClickResumeButton()
+    {
+        GameManager.Instance.uiController.ShowLevelSelectionCanvas(false);
+        base.Exit(() =>
+        {
+            GameManager.Instance.LoadProgressLevel();
+        });
     }
 }

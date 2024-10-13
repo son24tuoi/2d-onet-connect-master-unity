@@ -44,23 +44,21 @@ public class DataManager : MonoBehaviour
         dataController.Save();
     }
 
-    public void WinLevel(int levelIndex, int starWin, int highScore, int elapsedSeconds)
+    public void WinLevel(int levelIndex, int score)
     {
         if (levelIndex < 0)
             return;
 
         if (levelIndex < Data.levelData.LevelIndex)
         {
-            Data.levelData.OverrideStar(levelIndex, starWin);
-            Data.levelData.OverrideHighScore(levelIndex, highScore);
-            Data.levelData.OverrideElapsedTime(levelIndex, elapsedSeconds);
+
         }
         else
         {
-            Data.levelData.IncreaseLevel(starWin, highScore, elapsedSeconds);
+            Data.levelData.IncreaseLevel();
         }
 
-        Data.itemsData.AddItem(ItemsData.ItemType.Star, highScore);
+        Data.itemsData.AddItem(ItemsData.ItemType.Star, score);
         SaveData();
     }
 
@@ -133,6 +131,27 @@ public class DataManager : MonoBehaviour
                 rewardProfileSO.rewards[i].amount
             );
         }
+
+        SaveData();
+    }
+
+    public void SetIsPlaying(bool isPlaying)
+    {
+        Data.levelData.IsPlaying = isPlaying;
+
+        SaveData();
+    }
+
+    public void UpdateProgressLevel(int[,] map, int[] idCards, float elapsedSeconds, int starsReceived, int amountMatch)
+    {
+        if (!Data.levelData.IsPlaying)
+            return;
+
+        Data.levelData.NodeGrid = new NodeGrid(map);
+        Data.levelData.IdCards = idCards;
+        Data.levelData.ElapsedSeconds = elapsedSeconds;
+        Data.levelData.StarsReceived = starsReceived;
+        Data.levelData.AmountMatch = amountMatch;
 
         SaveData();
     }

@@ -36,13 +36,6 @@ public class WinInfoView : MyMonoBehaviour
         await Tween.Custom(startValue, gameProfileSO.starsReceived, duration,
             onValueChange: value => SetScoreValue((int)value),
             useUnscaledTime: true);
-
-        if (gameProfileSO.isNewHighScore)
-        {
-            highScore.transform.localScale = Vector3.one * 3f;
-            highScore.SetActive(true);
-            await Tween.Scale(highScore.transform, 1f, duration: 0.1f, useUnscaledTime: true);
-        }
     }
 
     public void SetScoreValue(int value)

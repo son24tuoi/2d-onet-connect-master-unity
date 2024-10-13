@@ -59,6 +59,11 @@ public class GameManager : MonoBehaviour
         levelManager.LoadLevel(levelIndex);
     }
 
+    public void LoadProgressLevel()
+    {
+        levelManager.LoadProgressLevel();
+    }
+
     public void NextLevel()
     {
         if (gameProfileSO.currentLevelIndex < 0)
@@ -74,6 +79,7 @@ public class GameManager : MonoBehaviour
     public void ReturnLevelSelection()
     {
         uiController.ShowLevelSelectionCanvas();
+        gameProfileSO.isPlaying = false;
         levelManager.Clear();
     }
 
@@ -84,13 +90,7 @@ public class GameManager : MonoBehaviour
 
     private void WinLevelCallback()
     {
-        gameProfileSO.isNewHighScore =
-            dataManager.Data.levelData.IsNewHighScore(gameProfileSO.currentLevelIndex, gameProfileSO.starsReceived);
-
-        dataManager.WinLevel(gameProfileSO.currentLevelIndex,
-            gameProfileSO.starWin,
-            gameProfileSO.starsReceived,
-            (int)gameProfileSO.elapsedSeconds);
+        dataManager.WinLevel(gameProfileSO.currentLevelIndex, gameProfileSO.starsReceived);
 
         dataManager.SaveReward(rewardProfileSOForWin);
 

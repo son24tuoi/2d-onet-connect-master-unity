@@ -10,7 +10,7 @@ public class LevelProfileSO : ScriptableObject
 
     public StartingCard[] startingCards;
 
-    public Align.AlignType alignType = Align.AlignType.None;
+    public AlignmentData alignmentData;
 
     public TimeSystem timeSystem;
 
@@ -50,6 +50,18 @@ public class LevelProfileSO : ScriptableObject
 
         return idCards;
     }
+
+    public AlignmentType GetAlignmentType(int index) => alignmentData.GetAlignmentType(index);
+
+
+
+
+
+
+
+
+
+
 
 #if UNITY_EDITOR
     [CustomEditor(typeof(LevelProfileSO))]

@@ -43,7 +43,7 @@ public class LevelHolder : MyMonoBehaviour
                 if (i + firstIndex < LevelMax)
                 {
                     _levelButtonList[i].gameObject.SetActive(true);
-                    _levelButtonList[i].Setup(i + firstIndex, LevelData.GetStarWin(i + firstIndex));
+                    // _levelButtonList[i].Setup(i + firstIndex, LevelData.GetStarWin(i + firstIndex));
                 }
                 else
                 {

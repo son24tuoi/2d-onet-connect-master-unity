@@ -3,33 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class LevelData : ILevelData
+public class LevelData
 {
+    [SerializeField] private bool m_tutorialGamePlay;
+
+    [Header("Progress Level")]
+    [SerializeField] private bool m_isPlaying;
     [SerializeField] private int m_levelIndex;
-    [SerializeField] private List<int> m_starWin;
-    [SerializeField] private List<int> m_highScores;
-    [SerializeField] private List<int> m_elapsedTime;
-    [SerializeField] private bool m_tutorialGamePlay = false;
+    [SerializeField] private NodeGrid m_nodeGrid;
+    [SerializeField] private int[] m_idCards;
+    [SerializeField] private float m_elapsedSeconds;
+    [SerializeField] private int m_starsReceived;
+    [SerializeField] private int m_amountMatch;
 
     public int LevelIndex
     {
         get { return m_levelIndex; }
         // set { m_levelIndex = value; }
-    }
-
-    public List<int> StarWin
-    {
-        get { return m_starWin; }
-    }
-
-    public List<int> HighScores
-    {
-        get { return m_highScores; }
-    }
-
-    public List<int> ElapsedTime
-    {
-        get { return m_elapsedTime; }
     }
 
     public bool TutorialGamePlay
@@ -38,91 +28,55 @@ public class LevelData : ILevelData
         set { m_tutorialGamePlay = value; }
     }
 
+    public bool IsPlaying
+    {
+        get { return m_isPlaying; }
+        set { m_isPlaying = value; }
+    }
+
+    public int[] IdCards
+    {
+        get { return m_idCards; }
+        set { m_idCards = value; }
+    }
+
+    public NodeGrid NodeGrid
+    {
+        get { return m_nodeGrid; }
+        set { m_nodeGrid = value; }
+    }
+
+    public float ElapsedSeconds
+    {
+        get { return m_elapsedSeconds; }
+        set { m_elapsedSeconds = value; }
+    }
+
+    public int StarsReceived
+    {
+        get { return m_starsReceived; }
+        set { m_starsReceived = value; }
+    }
+
+    public int AmountMatch
+    {
+        get { return m_amountMatch; }
+        set { m_amountMatch = value; }
+    }
+
     public LevelData()
     {
         m_levelIndex = 0;
-        m_starWin = new List<int>();
-        m_highScores = new List<int>();
-        m_elapsedTime = new List<int>();
         m_tutorialGamePlay = false;
+        m_isPlaying = false;
+
+        m_elapsedSeconds = 0f;
+        m_starsReceived = 0;
+        m_amountMatch = 0;
     }
 
-    public void IncreaseLevel(int starWin, int highScore, int elapsedSeconds)
+    public void IncreaseLevel()
     {
         m_levelIndex++;
-        m_starWin.Add(starWin);
-        m_highScores.Add(highScore);
-        m_elapsedTime.Add(elapsedSeconds);
     }
-
-    public int GetStarWin(int levelIndex)
-    {
-        if (levelIndex >= 0 && m_starWin.Count > levelIndex)
-        {
-            return m_starWin[levelIndex];
-        }
-
-        return -1;
-    }
-
-    public int GetHighScore(int levelIndex)
-    {
-        if (levelIndex >= 0 && m_highScores.Count > levelIndex)
-        {
-            return m_highScores[levelIndex];
-        }
-
-        return -1;
-    }
-
-    public bool OverrideStar(int index, int starWin)
-    {
-        if (starWin > m_starWin[index])
-        {
-            m_starWin[index] = starWin;
-            return true;
-        }
-
-        return false;
-    }
-
-    public bool OverrideHighScore(int index, int highScore)
-    {
-        if (highScore > m_highScores[index])
-        {
-            m_highScores[index] = highScore;
-            return true;
-        }
-
-        return false;
-    }
-
-    public bool OverrideElapsedTime(int index, int elapsedSeconds)
-    {
-        if (elapsedSeconds < m_elapsedTime[index])
-        {
-            m_elapsedTime[index] = elapsedSeconds;
-            return true;
-        }
-
-        return false;
-    }
-
-    public bool IsNewHighScore(int index, int highScore)
-    {
-        if (index < 0)
-            return true;
-
-        if (index < m_highScores.Count)
-        {
-            return highScore > m_highScores[index];
-        }
-
-        return true;
-    }
-}
-
-public interface ILevelData
-{
-    public int LevelIndex { get; }
 }

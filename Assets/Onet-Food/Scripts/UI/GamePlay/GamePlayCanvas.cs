@@ -30,6 +30,7 @@ public class GamePlayCanvas : MonoBehaviour
     public void OnClickPauseButton()
     {
         GameManager.Instance.uiController.ShowPauseCanvas();
+        EventManager.Instance.Trigger(EventID.UpdateProgressLevel);
     }
 
     public void Win()

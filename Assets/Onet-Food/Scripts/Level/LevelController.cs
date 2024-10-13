@@ -5,7 +5,7 @@ using Cysharp.Threading.Tasks;
 using PrimeTween;
 using UnityEngine;
 
-public class LevelController : MyMonoBehaviour
+public class LevelController : MyMonoBehaviour, IEventHandler
 {
     public static event Action OnWinEvent;
     public static event Action OnLoseEvent;
@@ -13,12 +13,12 @@ public class LevelController : MyMonoBehaviour
     [Header("Element")]
     public CardData cardData;
     public Graph graph;
-    private GraphView m_graphView;
+    public GraphView graphView;
 
     public Pathfinder pathfinder;
     public Suggester suggester;
     public Shuffle shuffle;
-    public Align align;
+    public Alignment alignment;
 
     public Timer timer;
 
@@ -31,13 +31,19 @@ public class LevelController : MyMonoBehaviour
 
     [Header("Config")]
     public GameProfileSO gameProfileSO;
-    public Align.AlignType alignType = Align.AlignType.None;
+    public AlignmentType alignType = AlignmentType.None;
 
     private LevelProfileSO m_levelProfileSO;
     private int m_amountCard;
     private int m_amountCardEffect;
 
-    private bool m_isPlaying;
+    private int m_amountMatch;
+
+    private bool IsPlaying
+    {
+        get => gameProfileSO.isPlaying;
+        set => gameProfileSO.isPlaying = value;
+    }
 
     public bool IsClearCardEffect
     {
@@ -56,6 +62,8 @@ public class LevelController : MyMonoBehaviour
         PathView.OnDoneShowEvent += CheckWin;
 
         ScreenDetector.OnChangeScreenOrientationEvent += SetPositionCamera;
+
+        EventManager.Instance.Subcribe(EventID.UpdateProgressLevel, this);
     }
 
     private void OnDestroy()
@@ -65,6 +73,26 @@ public class LevelController : MyMonoBehaviour
         PathView.OnDoneShowEvent -= CheckWin;
 
         ScreenDetector.OnChangeScreenOrientationEvent -= SetPositionCamera;
+
+        EventManager.Instance.Unsubcribe(EventID.UpdateProgressLevel, this);
+    }
+
+    public void Init(LevelProfileSO levelProfileSO, int[,] graphMap, int[] idCards, float elapsedSeconds, int starsReceived, int amountMatch)
+    {
+        Clear();
+
+        m_levelProfileSO = levelProfileSO;
+
+        gameProfileSO.SetStarsReceived(starsReceived);
+
+        int[,] alignmentMap = MapData.MakeMap(m_levelProfileSO.textAsset);
+        StartCoroutine(IELoadMap(graphMap, alignmentMap, idCards));
+        m_amountMatch = amountMatch;
+
+        StartTimer();
+        timer.SetElapsedSeconds(elapsedSeconds);
+
+        SetupPreplay();
     }
 
     public void Init(LevelProfileSO levelProfileSO)
@@ -74,15 +102,72 @@ public class LevelController : MyMonoBehaviour
         m_levelProfileSO = levelProfileSO;
 
         gameProfileSO.SetStarsReceived(0);
-        StartCoroutine(IELoadMap());
 
+        cardData.Init(m_levelProfileSO.GetStartingCards());
+        m_amountMatch = 0;
+
+        int[,] instanceMap = MapData.MakeMap(m_levelProfileSO.textAsset);
+        StartCoroutine(IELoadMap(instanceMap, instanceMap, cardData.idCards.ToArray()));
+
+        StartTimer();
+
+        SetupPreplay();
+    }
+
+    private IEnumerator IELoadMap(int[,] graphMap, int[,] alignmentMap, int[] idCards)
+    {
+        if (graph != null && cardData != null)
+        {
+            gameProfileSO.enablePlayerController = false;
+
+            graph.Init(graphMap);
+            m_amountCard = graph.walls.Count;
+            m_amountCardEffect = m_amountCard;
+
+            graphView.Init();
+            graphView.ShowCards(graph.walls, idCards);
+
+            if (pathfinder != null)
+            {
+                pathfinder.Init(graph, graphView);
+            }
+
+            if (suggester != null)
+            {
+                suggester.Init(graph, graphView, pathfinder);
+            }
+
+            if (shuffle != null)
+            {
+                shuffle.Init(graph, graphView);
+            }
+
+            if (alignment != null)
+            {
+                alignment.Init(alignmentMap, graph, graphView);
+            }
+
+            yield return StartCoroutine(IECheckMapConnectivityForShuffling());
+
+            gameProfileSO.enablePlayerController = true;
+        }
+    }
+
+    public void StartTimer()
+    {
         timer.Setup(m_levelProfileSO.timeSystem,
             () =>
             {
                 Lose();
             });
+
         timer.StartTimer();
-        m_isPlaying = true;
+    }
+
+    public void SetupPreplay()
+    {
+        IsPlaying = true;
+        DataManager.SetIsPlaying(IsPlaying);
 
         combo.Init();
 
@@ -94,53 +179,6 @@ public class LevelController : MyMonoBehaviour
         FirebaseManager.firebaseAnalytics.EventLevelStart(gameProfileSO.currentLevelIndex);
     }
 
-    public IEnumerator IELoadMap()
-    {
-        if (graph != null && cardData != null)
-        {
-            gameProfileSO.enablePlayerController = false;
-
-            int[,] mapInstance = MapData.MakeMap(m_levelProfileSO.textAsset);
-            graph.Init(mapInstance);
-            m_amountCard = graph.walls.Count;
-            m_amountCardEffect = m_amountCard;
-            cardData.Init(m_levelProfileSO.GetStartingCards());
-
-            if (graph.TryGetComponent<GraphView>(out GraphView graphView))
-            {
-                m_graphView = graphView;
-                graphView.Init(graph);
-                graphView.ShowCards(graph.walls, cardData.idCards);
-            }
-
-            if (pathfinder != null)
-            {
-                pathfinder.Init(graph, graphView);
-            }
-
-            if (suggester != null)
-            {
-                suggester.Init(graph, m_graphView, pathfinder);
-            }
-
-            if (shuffle != null)
-            {
-                shuffle.Init(graph, graphView);
-            }
-
-            if (align != null)
-            {
-                align.Init(mapInstance, graph, graphView);
-            }
-
-            alignType = m_levelProfileSO.alignType;
-
-            yield return StartCoroutine(IECheckMapConnectivityForShuffling());
-
-            gameProfileSO.enablePlayerController = true;
-        }
-    }
-
     private void SetupCamera()
     {
         SetPositionCamera();
@@ -149,7 +187,7 @@ public class LevelController : MyMonoBehaviour
 
     private void SetPositionCamera()
     {
-        if (!m_isPlaying)
+        if (!IsPlaying)
             return;
 
         Vector3 cameraPos = new Vector3((float)(graph.Width - 1) / 2f, (float)(graph.Height - 1) / 2f, -10);
@@ -186,13 +224,14 @@ public class LevelController : MyMonoBehaviour
             startNode.nodeType = NodeType.Open;
             goalNode.nodeType = NodeType.Open;
 
+            // Tìm đường đi thỏa mãn
             pathfinder.InitSearch(startNode, goalNode);
             yield return StartCoroutine(pathfinder.IESearchCustom());
             bool find = pathfinder.find;
 
             if (find)
             {
-                m_graphView.ClearCards(new List<Node> { startNode, goalNode });
+                graphView.ClearCards(new List<Node> { startNode, goalNode });
                 m_amountCard -= 2;
                 combo.Setup();
             }
@@ -212,7 +251,7 @@ public class LevelController : MyMonoBehaviour
                 Tween.ShakeCamera(Camera.main, 0.25f, 0.1f);
             }
 
-            m_graphView.ResetNodeViews(graph);
+            graphView.ResetNodeViews(graph);
 
             if (IsClearCard)
             {
@@ -220,13 +259,21 @@ public class LevelController : MyMonoBehaviour
                 yield break;
             }
 
-            if (alignType != Align.AlignType.None)
+            if (find)
             {
-                align.SetAlign(alignType);
-                yield return new WaitForSeconds(0.3f);
-            }
+                // Sắp xếp lại map
+                alignType = m_levelProfileSO.GetAlignmentType(m_amountMatch);
+                m_amountMatch++;
 
-            yield return StartCoroutine(IECheckMapConnectivityForShuffling());
+                if (alignType != AlignmentType.None)
+                {
+                    alignment.SetAlign(alignType);
+                    yield return new WaitForSeconds(0.3f);
+                }
+
+                // Kiểm tra tính khả thi của màn chơi
+                yield return StartCoroutine(IECheckMapConnectivityForShuffling());
+            }
         }
     }
 
@@ -245,7 +292,7 @@ public class LevelController : MyMonoBehaviour
 
     public void ChangeAlignDirection(int type)
     {
-        alignType = (Align.AlignType)type;
+        alignType = (AlignmentType)type;
     }
 
     public void UseSupportItem(ItemsData.ItemType itemType)
@@ -287,7 +334,8 @@ public class LevelController : MyMonoBehaviour
         {
             gamePlayCanvas.Interaction = true;
             OnWinEvent?.Invoke();
-            m_isPlaying = false;
+            IsPlaying = false;
+            DataManager.SetIsPlaying(IsPlaying);
         });
 
         FirebaseManager.firebaseAnalytics.EventLevelEnd(gameProfileSO.currentLevelIndex, gameProfileSO.elapsedSeconds);
@@ -295,20 +343,61 @@ public class LevelController : MyMonoBehaviour
 
     public void Lose()
     {
-        m_isPlaying = false;
+        IsPlaying = false;
+        DataManager.SetIsPlaying(IsPlaying);
         OnLoseEvent?.Invoke();
     }
 
     public void Clear()
     {
-        if (m_graphView != null)
+        if (graphView != null)
         {
-            m_graphView.ClearNodeView();
+            graphView.ClearNodeView();
         }
 
         timer.StopTimer();
-        m_isPlaying = false;
+        IsPlaying = false;
 
         starCounter.StopAll();
+    }
+
+    private void OnApplicationPause(bool pauseStatus)
+    {
+        if (pauseStatus)
+        {
+            UpdateProgressLevel();
+        }
+    }
+
+    private void OnApplicationQuit()
+    {
+        UpdateProgressLevel();
+    }
+
+    public void UpdateProgressLevel()
+    {
+        if (!IsPlaying)
+            return;
+
+        Debug.Log("Save Progress");
+        DataManager.UpdateProgressLevel(
+            map: graph.GetMap(),
+            idCards: graphView.GetIdCards().ToArray(),
+            elapsedSeconds: timer.timeProfileSO.timerData.elapsedSeconds,
+            starsReceived: gameProfileSO.starsReceived,
+            amountMatch: m_amountMatch);
+    }
+
+    public void EventHandler(EventID eventID)
+    {
+        switch (eventID)
+        {
+            case EventID.UpdateProgressLevel:
+                UpdateProgressLevel();
+                break;
+            default:
+                Debug.Log("Unknown event id");
+                break;
+        }
     }
 }

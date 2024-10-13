@@ -166,7 +166,7 @@ public class NodeView : MonoBehaviour
             }
         }
 
-        Debug.LogWarning("NODEVIEW GetCard missing card");
+        // Debug.LogWarning("NODEVIEW GetCard missing card");
 
         return -1;
     }

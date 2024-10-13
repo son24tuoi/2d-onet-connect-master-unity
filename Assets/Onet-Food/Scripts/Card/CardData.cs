@@ -15,7 +15,7 @@ public class CardData : MonoBehaviour
 
         if (shuffleCard)
         {
-            ListShuffler.Shuffle<int>(idCards);
+            ListShuffler.Shuffle(idCards);
         }
     }
 }

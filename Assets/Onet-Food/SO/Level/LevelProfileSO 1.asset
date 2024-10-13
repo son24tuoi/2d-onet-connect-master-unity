@@ -118,7 +118,9 @@ MonoBehaviour:
     amount: 2
   - id: 29
     amount: 2
-  alignType: 0
+  alignmentData:
+    alignmentTypes: 01000000020000000300000004000000
+    alignmentSearchType: 1
   timeSystem:
     maxPlayTime: 180
     oneStar: 0.2

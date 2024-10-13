@@ -2,24 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Align : MonoBehaviour
+public class Alignment : MonoBehaviour
 {
     private int[,] m_mapData;
     private Graph m_graph;
     private GraphView m_graphView;
-
-    public enum AlignType
-    {
-        None,
-        Up,
-        Right,
-        Down,
-        Left,
-        LeftAndRight,
-        UpAndDown,
-        CenterHorizontally,
-        CenterVertically
-    }
 
     public void Init(int[,] mapData, Graph graph, GraphView graphView)
     {
@@ -28,32 +15,32 @@ public class Align : MonoBehaviour
         m_graphView = graphView;
     }
 
-    public void SetAlign(AlignType type)
+    public void SetAlign(AlignmentType type)
     {
         switch (type)
         {
-            case AlignType.Up:
+            case AlignmentType.Up:
                 AlignUp();
                 break;
-            case AlignType.Right:
+            case AlignmentType.Right:
                 AlignRight();
                 break;
-            case AlignType.Down:
+            case AlignmentType.Down:
                 AlignDown(); ;
                 break;
-            case AlignType.Left:
+            case AlignmentType.Left:
                 AlignLeft();
                 break;
-            case AlignType.LeftAndRight:
+            case AlignmentType.LeftAndRight:
                 AlignLeftAndRight();
                 break;
-            case AlignType.UpAndDown:
+            case AlignmentType.UpAndDown:
                 AlignUpAndDown();
                 break;
-            case AlignType.CenterHorizontally:
+            case AlignmentType.CenterHorizontally:
                 AlignCenterHorizontally();
                 break;
-            case AlignType.CenterVertically:
+            case AlignmentType.CenterVertically:
                 AlignCenterVertically();
                 break;
             default:

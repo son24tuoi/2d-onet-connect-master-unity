@@ -13,7 +13,7 @@ public class GameProfileSO : ScriptableObject
     public int starsReceived;
     public float elapsedSeconds = 0;
     public int starWin;
-    public bool isNewHighScore;
+    public bool isPlaying;
 
     [Header("Popup")]
     public int countPopupShowed;
@@ -25,6 +25,7 @@ public class GameProfileSO : ScriptableObject
     {
         countPopupShowed = 0;
         isCheat = false;
+        isPlaying = false;
     }
 
     public int StarsReceived

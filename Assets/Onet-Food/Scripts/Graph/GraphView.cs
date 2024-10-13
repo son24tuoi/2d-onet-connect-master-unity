@@ -5,13 +5,14 @@ using UnityEngine;
 [RequireComponent(typeof(Graph))]
 public class GraphView : MonoBehaviour
 {
-    public GameObject nodeViewPrefab;
+    public Graph graph;
+    public NodeView nodeViewPrefab;
     public NodeView[,] nodeViews = new NodeView[0, 0];
 
     public Color baseColor = Color.white;
     public Color wallColor = Color.black;
 
-    public void Init(Graph graph)
+    public void Init()
     {
         if (graph == null)
         {
@@ -23,16 +24,16 @@ public class GraphView : MonoBehaviour
 
         nodeViews = new NodeView[graph.Width, graph.Height];
 
+        NodeView instance; // cache
+
         foreach (Node n in graph.nodes)
         {
-            GameObject instance = Instantiate(nodeViewPrefab, Vector3.zero, Quaternion.identity, transform);
+            instance = Instantiate(nodeViewPrefab, Vector3.zero, Quaternion.identity, transform);
 
-            if (instance.TryGetComponent<NodeView>(out NodeView nodeView))
-            {
-                nodeView.Init(n);
-                nodeViews[n.xIndex, n.yIndex] = nodeView;
-                nodeView.ColorNode(n.nodeType == NodeType.Blocked ? wallColor : baseColor);
-            }
+            instance.Init(n);
+            instance.ColorNode(n.nodeType == NodeType.Blocked ? wallColor : baseColor);
+
+            nodeViews[n.xIndex, n.yIndex] = instance;
         }
     }
 
@@ -95,9 +96,9 @@ public class GraphView : MonoBehaviour
         }
     }
 
-    public void ShowCards(List<Node> nodes, List<int> idCards)
+    public void ShowCards(List<Node> nodes, int[] idCards)
     {
-        int count = (nodes.Count <= idCards.Count) ? nodes.Count : idCards.Count;
+        int count = (nodes.Count <= idCards.Length) ? nodes.Count : idCards.Length;
 
         for (int i = 0; i < count; i++)
         {
@@ -190,12 +191,19 @@ public class GraphView : MonoBehaviour
     {
         if (node != null)
         {
-            NodeView nodeView = nodeViews[node.xIndex, node.yIndex];
+            return GetIDCard(nodeViews[node.xIndex, node.yIndex]);
+        }
 
-            if (nodeView != null)
-            {
-                return nodeView.GetIDCard();
-            }
+        Debug.LogWarning("NODEVIEW GetCard missing card");
+
+        return -1;
+    }
+
+    public int GetIDCard(NodeView nodeView)
+    {
+        if (nodeView != null)
+        {
+            return nodeView.GetIDCard();
         }
 
         Debug.LogWarning("NODEVIEW GetCard missing card");
@@ -230,5 +238,27 @@ public class GraphView : MonoBehaviour
         }
 
         nodeViews = new NodeView[0, 0];
+    }
+
+    public List<int> GetIdCards()
+    {
+        List<int> idCards = new List<int>();
+
+        int idCard; // cache
+
+        for (int y = 0; y < graph.Height; y++)
+        {
+            for (int x = 0; x < graph.Width; x++)
+            {
+                idCard = GetIDCard(graph.nodes[x, y]);
+
+                if (idCard >= 0)
+                {
+                    idCards.Add(idCard);
+                }
+            }
+        }
+
+        return idCards;
     }
 }

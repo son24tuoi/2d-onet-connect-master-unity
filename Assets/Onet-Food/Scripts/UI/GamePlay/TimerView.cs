@@ -166,7 +166,6 @@ public class TimerView : MonoBehaviour
 
     public void ShowStar(float value)
     {
-        Debug.Log("aaaaaaaaaaaaaa");
         m_starImages[2].gameObject.SetActive(value >= m_timeThreeStar);
         m_starImages[1].gameObject.SetActive(value >= m_timeTwoStar);
         m_starImages[0].gameObject.SetActive(value >= m_timeOneStar);

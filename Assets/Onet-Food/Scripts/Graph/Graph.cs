@@ -22,6 +22,21 @@ public class Graph : MonoBehaviour
         Vector2.left
     };
 
+    public void Init(Node[,] nodes)
+    {
+        this.nodes = nodes;
+
+        walls = new List<Node>();
+
+        foreach (Node n in this.nodes)
+        {
+            if (n.nodeType == NodeType.Blocked)
+            {
+                walls.Add(n);
+            }
+        }
+    }
+
     public void Init(int[,] mapData)
     {
         m_mapData = mapData;
@@ -371,5 +386,20 @@ public class Graph : MonoBehaviour
         {
             return false;
         }
+    }
+
+    public int[,] GetMap()
+    {
+        int[,] map = new int[Width, Height];
+
+        for (int y = 0; y < Height; y++)
+        {
+            for (int x = 0; x < Width; x++)
+            {
+                map[x, y] = (nodes[x, y].nodeType == NodeType.Blocked) ? 1 : 0;
+            }
+        }
+
+        return map;
     }
 }
