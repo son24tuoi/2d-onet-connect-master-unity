@@ -20,7 +20,7 @@ public class LoseCanvas : Popup
 
     public void OnClickHomeButton()
     {
-        GameManager.Instance.ReturnLevelSelection();
+        GameManager.Instance.BackToHome();
         Exit();
     }
 

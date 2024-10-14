@@ -33,7 +33,6 @@ public class PlayLevelCanvas : Popup
 
     public void OnClickPlayButton()
     {
-        GameManager.Instance.uiController.ShowLevelSelectionCanvas(false);
         base.Exit(() =>
         {
             GameManager.Instance.PlayLevel(m_levelIndex);
@@ -47,7 +46,6 @@ public class PlayLevelCanvas : Popup
 
     public void OnClickResumeButton()
     {
-        GameManager.Instance.uiController.ShowLevelSelectionCanvas(false);
         base.Exit(() =>
         {
             GameManager.Instance.LoadProgressLevel();

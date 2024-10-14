@@ -15,7 +15,6 @@ public class UIController : MonoBehaviour, IEventHandler, IEventHandlerWithData
     public PauseCanvas pauseCanvas;
     public WinCanvas winCanvas;
     public LoseCanvas loseCanvas;
-    public LevelSelectionCanvas levelSelectionCanvas;
     public PlayLevelCanvas playLevelCanvas;
     public ShopCanvas shopCanvas;
 
@@ -74,12 +73,6 @@ public class UIController : MonoBehaviour, IEventHandler, IEventHandlerWithData
     public void ShowLoseCanvas()
     {
         loseCanvas.gameObject.SetActive(true);
-    }
-
-    public void ShowLevelSelectionCanvas(bool show = true)
-    {
-        ShowMainPanel(MainPanelType.None);
-        levelSelectionCanvas.gameObject.SetActive(show);
     }
 
     public void ShowPlayLevelCanvas(int levelIndex)

@@ -33,7 +33,7 @@ public class PauseCanvas : Popup
     public void OnClickHomeButton()
     {
         base.Exit();
-        GameManager.Instance.ReturnLevelSelection();
+        GameManager.Instance.BackToHome();
     }
 
     public void OnClickReplayButton()

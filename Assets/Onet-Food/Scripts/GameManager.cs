@@ -56,11 +56,13 @@ public class GameManager : MonoBehaviour
 
     public void PlayLevel(int levelIndex)
     {
+        uiController.ShowMainPanel(UIController.MainPanelType.GamePlay);
         levelManager.LoadLevel(levelIndex);
     }
 
     public void LoadProgressLevel()
     {
+        uiController.ShowMainPanel(UIController.MainPanelType.GamePlay);
         levelManager.LoadProgressLevel();
     }
 
@@ -76,9 +78,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void ReturnLevelSelection()
+    public void BackToHome()
     {
-        uiController.ShowLevelSelectionCanvas();
+        uiController.ShowMainPanel(UIController.MainPanelType.Home);
         gameProfileSO.isPlaying = false;
         levelManager.Clear();
     }

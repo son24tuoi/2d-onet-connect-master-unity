@@ -66,7 +66,7 @@ public class WinCanvas : Popup
     {
         CheckShowInterstitialAd(() =>
         {
-            GameManager.Instance.ReturnLevelSelection();
+            GameManager.Instance.BackToHome();
             Exit();
         });
     }
