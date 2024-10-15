@@ -77,7 +77,7 @@ public class WinCanvas : Popup
         {
             Exit(() =>
             {
-                GameManager.Instance.PlayLevel(gameProfileSO.currentLevelIndex);
+                GameManager.Instance.PlayLevel();
             });
         });
     }

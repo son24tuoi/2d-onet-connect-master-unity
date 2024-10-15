@@ -7,6 +7,7 @@ public class PauseCanvas : Popup
 {
     [Header("Element")]
     [SerializeField] private TextMeshProUGUI levelText;
+    [SerializeField] private AreYouSureExitPanel areYouSureExitPanelPrefab;
 
     protected override void OnEnable()
     {
@@ -32,6 +33,12 @@ public class PauseCanvas : Popup
 
     public void OnClickHomeButton()
     {
+        AreYouSureExitPanel areYouSureExitPanel = Instantiate(areYouSureExitPanelPrefab, transform);
+        areYouSureExitPanel.onYesEvent = BackHome;
+    }
+
+    private void BackHome()
+    {
         base.Exit();
         GameManager.Instance.BackToHome();
     }
@@ -39,7 +46,7 @@ public class PauseCanvas : Popup
     public void OnClickReplayButton()
     {
         base.Exit();
-        GameManager.Instance.PlayLevel(gameProfileSO.currentLevelIndex);
+        // GameManager.Instance.PlayLevel();
     }
 
     public void OnClickSettingButton()

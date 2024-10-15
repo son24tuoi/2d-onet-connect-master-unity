@@ -49,7 +49,14 @@ public class HomeCanvas : MonoBehaviour
 
     public void OnClickPlayButton()
     {
-        GameManager.Instance.uiController.ShowPlayLevelCanvas(0);
+        if (DataManager.Instance.Data.levelData.IsPlaying)
+        {
+            GameManager.Instance.uiController.ShowContinuePlayLevelCanvas();
+        }
+        else
+        {
+            GameManager.Instance.PlayLevel();
+        }
     }
 
     public void OnClickSettingButton()

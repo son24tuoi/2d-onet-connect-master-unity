@@ -26,7 +26,7 @@ public class LoseCanvas : Popup
 
     public void OnClickReplayButton()
     {
-        GameManager.Instance.PlayLevel(gameProfileSO.currentLevelIndex);
+        GameManager.Instance.PlayLevel();
         Exit();
     }
 }

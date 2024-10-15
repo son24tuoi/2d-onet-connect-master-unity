@@ -15,7 +15,7 @@ public class UIController : MonoBehaviour, IEventHandler, IEventHandlerWithData
     public PauseCanvas pauseCanvas;
     public WinCanvas winCanvas;
     public LoseCanvas loseCanvas;
-    public PlayLevelCanvas playLevelCanvas;
+    public ContinuePlayLevelCanvas continuePlayLevelCanvas;
     public ShopCanvas shopCanvas;
 
     [Header("Prefab")]
@@ -75,10 +75,10 @@ public class UIController : MonoBehaviour, IEventHandler, IEventHandlerWithData
         loseCanvas.gameObject.SetActive(true);
     }
 
-    public void ShowPlayLevelCanvas(int levelIndex)
+    public void ShowContinuePlayLevelCanvas()
     {
-        playLevelCanvas.Init(levelIndex);
-        playLevelCanvas.gameObject.SetActive(true);
+        continuePlayLevelCanvas.Init();
+        continuePlayLevelCanvas.gameObject.SetActive(true);
     }
 
     public void ShowSettingCanvas(bool show = true)

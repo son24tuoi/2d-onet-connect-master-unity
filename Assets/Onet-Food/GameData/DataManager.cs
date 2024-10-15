@@ -62,6 +62,11 @@ public class DataManager : MonoBehaviour
         SaveData();
     }
 
+    public string GetLevelName()
+    {
+        return GetLevelName(Data.levelData.LevelIndex);
+    }
+
     public string GetLevelName(int levelIndex)
     {
         return (levelIndex >= 0) ? (levelIndex + 1).ToString() : "Random";

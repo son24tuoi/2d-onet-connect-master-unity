@@ -54,10 +54,10 @@ public class GameManager : MonoBehaviour
         LevelController.OnWinEvent -= WinLevelCallback;
     }
 
-    public void PlayLevel(int levelIndex)
+    public void PlayLevel()
     {
         uiController.ShowMainPanel(UIController.MainPanelType.GamePlay);
-        levelManager.LoadLevel(levelIndex);
+        levelManager.LoadLevel(dataManager.Data.levelData.LevelIndex);
     }
 
     public void LoadProgressLevel()
