@@ -249,6 +249,7 @@ public class LevelController : MyMonoBehaviour, IEventHandler
                 VibrationManager.Failure();
                 AudioManager.PlaySFX(SFXType.Fail);
                 Tween.ShakeCamera(Camera.main, 0.25f, 0.1f);
+                gamePlayCanvas.Warning();
             }
 
             graphView.ResetNodeViews(graph);

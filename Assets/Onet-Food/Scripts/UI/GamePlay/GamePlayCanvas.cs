@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using PrimeTween;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GamePlayCanvas : MonoBehaviour
 {
     [Header("Element")]
+    [SerializeField] private TweenFadeImage warningEffect;
     [SerializeField] private TextMeshProUGUI levelTMP;
     [SerializeField] private TimerView timerView;
     public RectTransform playingArea;
@@ -36,5 +39,13 @@ public class GamePlayCanvas : MonoBehaviour
     public void Win()
     {
         timerView.WinLevelCallback();
+    }
+
+    public void Warning()
+    {
+        warningEffect.Fade(() =>
+        {
+            warningEffect.ReverseFade();
+        });
     }
 }

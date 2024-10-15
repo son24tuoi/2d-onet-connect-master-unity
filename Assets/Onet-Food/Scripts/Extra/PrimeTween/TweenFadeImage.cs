@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
+
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -50,6 +52,15 @@ namespace PrimeTween
         public void ReverseFade()
         {
             Tween.Alpha(Image, to, from, duration, ease, useUnscaledTime: ignoreTimeScale);
+        }
+
+        public void Fade(Action onComplete)
+        {
+            Tween.Alpha(Image, from, to, duration, ease, useUnscaledTime: ignoreTimeScale)
+                .OnComplete(() =>
+                {
+                    onComplete?.Invoke();
+                });
         }
     }
 
