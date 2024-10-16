@@ -6,6 +6,7 @@ using UnityEngine;
 public class LevelData
 {
     [SerializeField] private bool m_tutorialGamePlay;
+    [SerializeField] private int m_highestLevelIndex;
 
     [Header("Progress Level")]
     [SerializeField] private bool m_isPlaying;
@@ -19,13 +20,19 @@ public class LevelData
     public int LevelIndex
     {
         get { return m_levelIndex; }
-        // set { m_levelIndex = value; }
+        set { m_levelIndex = value; }
     }
 
     public bool TutorialGamePlay
     {
         get { return m_tutorialGamePlay; }
         set { m_tutorialGamePlay = value; }
+    }
+
+    public int HighestLevelIndex
+    {
+        get { return m_highestLevelIndex; }
+        // set { m_highestLevelIndex = value; }
     }
 
     public bool IsPlaying
@@ -67,6 +74,7 @@ public class LevelData
     public LevelData()
     {
         m_levelIndex = 0;
+        m_highestLevelIndex = 0;
         m_tutorialGamePlay = false;
         m_isPlaying = false;
 
@@ -78,5 +86,10 @@ public class LevelData
     public void IncreaseLevel()
     {
         m_levelIndex++;
+
+        if (m_levelIndex > m_highestLevelIndex)
+        {
+            m_highestLevelIndex = m_levelIndex;
+        }
     }
 }

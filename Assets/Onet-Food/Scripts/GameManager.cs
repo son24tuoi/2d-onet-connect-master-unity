@@ -57,7 +57,8 @@ public class GameManager : MonoBehaviour
     public void PlayLevel()
     {
         uiController.ShowMainPanel(UIController.MainPanelType.GamePlay);
-        levelManager.LoadLevel(0);
+        dataManager.ResetLevel();
+        levelManager.LoadLevel(dataManager.Data.levelData.LevelIndex);
     }
 
     public void LoadProgressLevel()

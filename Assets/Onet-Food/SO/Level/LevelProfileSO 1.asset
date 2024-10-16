@@ -15,21 +15,21 @@ MonoBehaviour:
   textAsset: {fileID: 4900000, guid: ffd67c6441bb69f4b8e5b9d79934c38d, type: 3}
   startingCards:
   - id: 0
-    amount: 2
+    amount: 4
   - id: 1
-    amount: 2
+    amount: 4
   - id: 2
-    amount: 2
+    amount: 4
   - id: 3
-    amount: 2
+    amount: 4
   - id: 4
-    amount: 2
+    amount: 4
   - id: 5
-    amount: 2
+    amount: 4
   - id: 6
-    amount: 2
+    amount: 4
   - id: 7
-    amount: 2
+    amount: 4
   - id: 8
     amount: 2
   - id: 9
@@ -74,55 +74,35 @@ MonoBehaviour:
     amount: 2
   - id: 29
     amount: 2
-  - id: 29
+  - id: 30
     amount: 2
-  - id: 29
+  - id: 31
     amount: 2
-  - id: 29
+  - id: 32
     amount: 2
-  - id: 29
+  - id: 33
     amount: 2
-  - id: 29
+  - id: 34
     amount: 2
-  - id: 29
+  - id: 35
+    amount: 4
+  - id: 36
     amount: 2
-  - id: 29
+  - id: 37
     amount: 2
-  - id: 29
+  - id: 38
     amount: 2
-  - id: 29
+  - id: 39
+    amount: 4
+  - id: 40
     amount: 2
-  - id: 29
-    amount: 2
-  - id: 29
-    amount: 2
-  - id: 29
-    amount: 2
-  - id: 29
-    amount: 2
-  - id: 29
-    amount: 2
-  - id: 29
-    amount: 2
-  - id: 29
-    amount: 2
-  - id: 29
-    amount: 2
-  - id: 29
-    amount: 2
-  - id: 29
-    amount: 2
-  - id: 29
-    amount: 2
-  - id: 29
-    amount: 2
-  - id: 29
+  - id: 41
     amount: 2
   alignmentData:
-    alignmentTypes: 01000000020000000300000004000000
-    alignmentSearchType: 1
+    alignmentTypes: 00000000
+    alignmentSearchType: 0
   timeSystem:
-    maxPlayTime: 180
+    maxPlayTime: 300
     oneStar: 0.2
     twoStar: 0.5
     threeStar: 0.7

@@ -49,16 +49,9 @@ public class DataManager : MonoBehaviour
         if (levelIndex < 0)
             return;
 
-        if (levelIndex < Data.levelData.LevelIndex)
-        {
-
-        }
-        else
-        {
-            Data.levelData.IncreaseLevel();
-        }
-
+        Data.levelData.IncreaseLevel();
         Data.itemsData.AddItem(ItemsData.ItemType.Star, score);
+
         SaveData();
     }
 
@@ -70,6 +63,13 @@ public class DataManager : MonoBehaviour
     public string GetLevelName(int levelIndex)
     {
         return (levelIndex >= 0) ? (levelIndex + 1).ToString() : "Random";
+    }
+
+    public void ResetLevel()
+    {
+        Data.levelData.LevelIndex = 0;
+
+        SaveData();
     }
 
     public void SaveTutorialGamePlay()
