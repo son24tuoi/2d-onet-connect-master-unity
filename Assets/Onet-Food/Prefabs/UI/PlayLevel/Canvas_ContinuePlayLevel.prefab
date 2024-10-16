@@ -500,8 +500,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4877129047802280904}
-        m_TargetAssemblyTypeName: PlayLevelCanvas, Assembly-CSharp
-        m_MethodName: OnClickResumeButton
+        m_TargetAssemblyTypeName: ContinuePlayLevelCanvas, Assembly-CSharp
+        m_MethodName: OnClickContinueButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -653,8 +653,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4877129047802280904}
-        m_TargetAssemblyTypeName: PlayLevelCanvas, Assembly-CSharp
-        m_MethodName: OnClickPlayButton
+        m_TargetAssemblyTypeName: ContinuePlayLevelCanvas, Assembly-CSharp
+        m_MethodName: OnClickRestartButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -800,6 +800,7 @@ MonoBehaviour:
   m_tweenFadeCanvasGroup: {fileID: 3021846860044262156}
   gameProfileSO: {fileID: 11400000, guid: 95e388c7a38002241979d9e64391f325, type: 2}
   infoTMP: {fileID: 7079018554247272272}
+  areYouSureRestartPanelPrefab: {fileID: 2181278303310111183, guid: 65661fb9b4e52bf4dbf729b072160a79, type: 3}
 --- !u!1 &3848064638877486096
 GameObject:
   m_ObjectHideFlags: 0

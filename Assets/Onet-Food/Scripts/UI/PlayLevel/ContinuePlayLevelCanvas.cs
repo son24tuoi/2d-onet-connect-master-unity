@@ -7,18 +7,17 @@ public class ContinuePlayLevelCanvas : Popup
 {
     [Header("Element")]
     [SerializeField] private TextMeshProUGUI infoTMP;
+    [SerializeField] private AreYouSureRestartPanel areYouSureRestartPanelPrefab;
 
     public void Init()
     {
         infoTMP.SetText("You are playing level " + DataManager.Instance.GetLevelName() + "\nDo you want continue?");
     }
 
-    public void OnClickPlayButton()
+    public void OnClickRestartButton()
     {
-        base.Exit(() =>
-        {
-            GameManager.Instance.PlayLevel();
-        });
+        AreYouSureRestartPanel areYouSureRestartPanel = Instantiate(areYouSureRestartPanelPrefab, transform);
+        areYouSureRestartPanel.onYesEvent = RestartLevel;
     }
 
     public void OnClickExitButton()
@@ -26,11 +25,19 @@ public class ContinuePlayLevelCanvas : Popup
         base.Exit();
     }
 
-    public void OnClickResumeButton()
+    public void OnClickContinueButton()
     {
         base.Exit(() =>
         {
             GameManager.Instance.LoadProgressLevel();
+        });
+    }
+
+    private void RestartLevel()
+    {
+        base.Exit(() =>
+        {
+            GameManager.Instance.PlayLevel();
         });
     }
 }
