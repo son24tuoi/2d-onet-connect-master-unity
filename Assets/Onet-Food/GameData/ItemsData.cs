@@ -30,7 +30,12 @@ public class ItemsData
 
     public ItemsData()
     {
-        itemQuantities = new SerializedDictionary<int, int>();
+        itemQuantities = new SerializedDictionary<int, int>
+        {
+            { (int)ItemType.Hint, 5 },
+            { (int)ItemType.Shuffle, 5 },
+            { (int)ItemType.Timer, 5 }
+        };
     }
 
     public int GetItem(ItemType itemType)

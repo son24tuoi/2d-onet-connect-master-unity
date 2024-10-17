@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "992117656065",
+    "project_id": "s2-onet-food-master",
+    "storage_bucket": "s2-onet-food-master.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:992117656065:android:82c5f04f9a4a34482d0e00",
+        "android_client_info": {
+          "package_name": "com.oneartist.puzzle.onetfood.master"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0cB3CEEsdiJHPlzJBVwaDu6cvH1IHz9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
