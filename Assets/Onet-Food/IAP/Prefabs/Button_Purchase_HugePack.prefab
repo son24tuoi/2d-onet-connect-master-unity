@@ -288,7 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b79b5624d944058bd39aad2b90fb275, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productId: com.oneartist.puzzle.onetfood.huge_pack
+  productId: com.oneartist.puzzle.onetfood.master.huge_pack
   buttonType: 0
   consumePurchase: 1
   onTransactionsRestored:

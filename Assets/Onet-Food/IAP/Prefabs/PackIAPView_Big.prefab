@@ -848,6 +848,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button_Purchase_BigPack
       objectReference: {fileID: 0}
+    - target: {fileID: 8898395257325005294, guid: 431e4e37d7ab70a49986fee42bfebb90, type: 3}
+      propertyPath: productId
+      value: com.oneartist.puzzle.onetfood.master.big_pack
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 431e4e37d7ab70a49986fee42bfebb90, type: 3}
 --- !u!224 &8777066411070968723 stripped

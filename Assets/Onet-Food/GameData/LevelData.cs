@@ -10,6 +10,7 @@ public class LevelData
 
     [Header("Progress Level")]
     [SerializeField] private bool m_isPlaying;
+    [SerializeField] private bool m_isStartingPlay;
     [SerializeField] private int m_levelIndex;
     [SerializeField] private NodeGrid m_nodeGrid;
     [SerializeField] private int[] m_idCards;
@@ -39,6 +40,12 @@ public class LevelData
     {
         get { return m_isPlaying; }
         set { m_isPlaying = value; }
+    }
+
+    public bool IsStarttingPlay
+    {
+        get { return m_isStartingPlay; }
+        set { m_isStartingPlay = value; }
     }
 
     public int[] IdCards
@@ -77,6 +84,7 @@ public class LevelData
         m_highestLevelIndex = 0;
         m_tutorialGamePlay = false;
         m_isPlaying = false;
+        m_isStartingPlay = false;
 
         m_elapsedSeconds = 0f;
         m_starsReceived = 0;

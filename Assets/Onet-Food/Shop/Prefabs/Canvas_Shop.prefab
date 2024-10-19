@@ -771,8 +771,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 358, y: -100}
-  m_SizeDelta: {x: 383.492, y: 110}
+  m_AnchoredPosition: {x: 358, y: -75}
+  m_SizeDelta: {x: 383.492, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4122432040998032966
 CanvasRenderer:
@@ -829,8 +829,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 90
+  m_fontSizeBase: 90
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -909,7 +909,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 200}
+  m_SizeDelta: {x: 0, y: 150}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &4122432041648004478
 GameObject:
@@ -984,8 +984,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -100}
-  m_SizeDelta: {x: 0, y: -200}
+  m_AnchoredPosition: {x: 0, y: -75}
+  m_SizeDelta: {x: 0, y: -150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4122432042411881778
 GameObject:
@@ -1102,8 +1102,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 78, y: -100}
-  m_SizeDelta: {x: 110, y: 110}
+  m_AnchoredPosition: {x: 100, y: -75}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4122432042598691946
 CanvasRenderer:
@@ -2033,7 +2033,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 6952270142832590321}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.30877194
+  m_Size: 0.3263158
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2597,7 +2597,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: e27556e7b7b27634598e365c047e8cde, type: 2}
     - target: {fileID: 5193120605217890521, guid: cb713a5b844ae6c4d9787d9a6592049b, type: 3}
       propertyPath: productId
-      value: com.oneartist.puzzle.onetfood.coin_pack_2
+      value: com.oneartist.puzzle.onetfood.master.coin_pack_2
       objectReference: {fileID: 0}
     - target: {fileID: 5369784645618084918, guid: cb713a5b844ae6c4d9787d9a6592049b, type: 3}
       propertyPath: m_IsActive
@@ -2735,7 +2735,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5193120605217890521, guid: cb713a5b844ae6c4d9787d9a6592049b, type: 3}
       propertyPath: productId
-      value: com.oneartist.puzzle.onetfood.coin_pack_5
+      value: com.oneartist.puzzle.onetfood.master.coin_pack_5
       objectReference: {fileID: 0}
     - target: {fileID: 7463593113599550922, guid: cb713a5b844ae6c4d9787d9a6592049b, type: 3}
       propertyPath: rewardProfileSO
@@ -2861,7 +2861,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 3f1d00cb30f9b254595838b4a542ba37, type: 2}
     - target: {fileID: 5193120605217890521, guid: cb713a5b844ae6c4d9787d9a6592049b, type: 3}
       propertyPath: productId
-      value: com.oneartist.puzzle.onetfood.coin_pack_1
+      value: com.oneartist.puzzle.onetfood.master.coin_pack_1
       objectReference: {fileID: 0}
     - target: {fileID: 5369784645618084918, guid: cb713a5b844ae6c4d9787d9a6592049b, type: 3}
       propertyPath: m_IsActive
@@ -2987,7 +2987,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 341d70326fd39874fb60a774e4155692, type: 2}
     - target: {fileID: 5193120605217890521, guid: cb713a5b844ae6c4d9787d9a6592049b, type: 3}
       propertyPath: productId
-      value: com.oneartist.puzzle.onetfood.coin_pack_3
+      value: com.oneartist.puzzle.onetfood.master.coin_pack_3
       objectReference: {fileID: 0}
     - target: {fileID: 7463593113599550922, guid: cb713a5b844ae6c4d9787d9a6592049b, type: 3}
       propertyPath: rewardProfileSO
@@ -3303,7 +3303,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5193120605217890521, guid: cb713a5b844ae6c4d9787d9a6592049b, type: 3}
       propertyPath: productId
-      value: com.oneartist.puzzle.onetfood.coin_pack_4
+      value: com.oneartist.puzzle.onetfood.master.coin_pack_4
       objectReference: {fileID: 0}
     - target: {fileID: 7463593113599550922, guid: cb713a5b844ae6c4d9787d9a6592049b, type: 3}
       propertyPath: rewardProfileSO
@@ -4039,7 +4039,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6756918422726523246, guid: c70de340c46cecf46b04baa0f6a34430, type: 3}
       propertyPath: _width
-      value: 1903
+      value: 2323
       objectReference: {fileID: 0}
     - target: {fileID: 6756918422726523246, guid: c70de340c46cecf46b04baa0f6a34430, type: 3}
       propertyPath: _height
@@ -4154,7 +4154,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2707349352441428662, guid: 75b25a8fc8729bf4eb954bf3ea380876, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -100
+      value: -75
       objectReference: {fileID: 0}
     - target: {fileID: 2707349352441428662, guid: 75b25a8fc8729bf4eb954bf3ea380876, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

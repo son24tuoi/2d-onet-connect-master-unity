@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id">
-  <string name="gcm_defaultSenderId" translatable="false">689833528011</string>
-  <string name="google_storage_bucket" translatable="false">s1-onet-food.appspot.com</string>
-  <string name="project_id" translatable="false">s1-onet-food</string>
-  <string name="google_api_key" translatable="false">AIzaSyA83qpk9aerqPA3XJ4ZJgUcZtHalD2PwGs</string>
-  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyA83qpk9aerqPA3XJ4ZJgUcZtHalD2PwGs</string>
-  <string name="google_app_id" translatable="false">1:689833528011:android:018028f429f4fe9201a94e</string>
+  <string name="gcm_defaultSenderId" translatable="false">992117656065</string>
+  <string name="google_storage_bucket" translatable="false">s2-onet-food-master.appspot.com</string>
+  <string name="project_id" translatable="false">s2-onet-food-master</string>
+  <string name="google_api_key" translatable="false">AIzaSyB0cB3CEEsdiJHPlzJBVwaDu6cvH1IHz9M</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyB0cB3CEEsdiJHPlzJBVwaDu6cvH1IHz9M</string>
+  <string name="google_app_id" translatable="false">1:992117656065:android:82c5f04f9a4a34482d0e00</string>
 </resources>

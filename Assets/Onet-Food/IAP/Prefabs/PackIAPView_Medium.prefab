@@ -559,6 +559,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8980514131395796172}
     m_Modifications:
+    - target: {fileID: 2814202289137757015, guid: f0b18897bd73ac442a19564d18a99749, type: 3}
+      propertyPath: productId
+      value: com.oneartist.puzzle.onetfood.master.medium_pack
+      objectReference: {fileID: 0}
     - target: {fileID: 3173575258071507547, guid: f0b18897bd73ac442a19564d18a99749, type: 3}
       propertyPath: m_Name
       value: Button_Purchase_MediumPack

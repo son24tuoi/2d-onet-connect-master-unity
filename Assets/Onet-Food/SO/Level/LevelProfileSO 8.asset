@@ -31,23 +31,23 @@ MonoBehaviour:
   - id: 7
     amount: 4
   - id: 8
-    amount: 2
+    amount: 4
   - id: 9
-    amount: 2
+    amount: 4
   - id: 10
-    amount: 2
+    amount: 4
   - id: 11
-    amount: 2
+    amount: 4
   - id: 12
-    amount: 2
+    amount: 4
   - id: 13
-    amount: 2
+    amount: 4
   - id: 14
-    amount: 2
+    amount: 4
   - id: 15
-    amount: 2
+    amount: 4
   - id: 16
-    amount: 2
+    amount: 4
   - id: 17
     amount: 2
   - id: 18
@@ -84,25 +84,11 @@ MonoBehaviour:
     amount: 2
   - id: 34
     amount: 2
-  - id: 35
-    amount: 4
-  - id: 36
-    amount: 2
-  - id: 37
-    amount: 2
-  - id: 38
-    amount: 2
-  - id: 39
-    amount: 4
-  - id: 40
-    amount: 2
-  - id: 41
-    amount: 2
   alignmentData:
     alignmentTypes: 07000000
     alignmentSearchType: 0
   timeSystem:
-    maxPlayTime: 300
+    maxPlayTime: 600
     oneStar: 0.2
     twoStar: 0.5
     threeStar: 0.7

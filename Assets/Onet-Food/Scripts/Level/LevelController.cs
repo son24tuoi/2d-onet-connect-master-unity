@@ -167,7 +167,8 @@ public class LevelController : MyMonoBehaviour, IEventHandler
     public void SetupPreplay()
     {
         IsPlaying = true;
-        DataManager.SetIsPlaying(IsPlaying);
+        DataManager.SetIsPlaying(true);
+        DataManager.SetIsStartingPlay(false);
 
         combo.Init();
 
@@ -336,7 +337,7 @@ public class LevelController : MyMonoBehaviour, IEventHandler
             gamePlayCanvas.Interaction = true;
             OnWinEvent?.Invoke();
             IsPlaying = false;
-            DataManager.SetIsPlaying(IsPlaying);
+            DataManager.SetIsStartingPlay(true);
         });
 
         FirebaseManager.firebaseAnalytics.EventLevelEnd(gameProfileSO.currentLevelIndex, gameProfileSO.elapsedSeconds);
@@ -345,7 +346,7 @@ public class LevelController : MyMonoBehaviour, IEventHandler
     public void Lose()
     {
         IsPlaying = false;
-        DataManager.SetIsPlaying(IsPlaying);
+        DataManager.SetIsPlaying(false);
         OnLoseEvent?.Invoke();
     }
 

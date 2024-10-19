@@ -681,6 +681,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button_Purchase_RemoveAdPack
       objectReference: {fileID: 0}
+    - target: {fileID: 8785673658147734521, guid: 2d79cf21ecdf69d40a77dcdce5a7df8d, type: 3}
+      propertyPath: productId
+      value: com.oneartist.puzzle.onetfood.master.remove_ads_pack
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d79cf21ecdf69d40a77dcdce5a7df8d, type: 3}
 --- !u!224 &4590988265430834813 stripped

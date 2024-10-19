@@ -15,8 +15,8 @@ public class InterstitialAdController : MonoBehaviour
 
     // These ad units are configured to always serve test ads.
 #if UNITY_ANDROID
-    private const string _adUnitId = "ca-app-pub-3940256099942544/1033173712"; // Test
-    // private const string _adUnitId = "ca-app-pub-3685654137441776/1131328545";
+    // private const string _adUnitId = "ca-app-pub-3940256099942544/1033173712"; // Test
+    private const string _adUnitId = "ca-app-pub-3685654137441776/3265146608";
 #elif UNITY_IPHONE
         private const string _adUnitId = "ca-app-pub-3940256099942544/4411468910";
 #else

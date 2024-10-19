@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: TimeProfileSO
   m_EditorClassIdentifier: 
   timeSystem:
-    maxPlayTime: 180
+    maxPlayTime: 600
     oneStar: 0.2
     twoStar: 0.5
     threeStar: 0.7
   timerData:
     m_started: 1
-    running: 1
+    running: 0
     finished: 0
-    m_totalSeconds: 180
-    elapsedSeconds: 2.7851748
+    m_totalSeconds: 600
+    elapsedSeconds: 600

@@ -772,6 +772,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7704513046347610240}
     m_Modifications:
+    - target: {fileID: 2373011802397791820, guid: f8a958b2d87a81d4785a2ebf3610ad9d, type: 3}
+      propertyPath: productId
+      value: com.oneartist.puzzle.onetfood.master.special_offer
+      objectReference: {fileID: 0}
     - target: {fileID: 3164449822686928704, guid: f8a958b2d87a81d4785a2ebf3610ad9d, type: 3}
       propertyPath: m_Name
       value: Button_Purchase_SpecialOffer

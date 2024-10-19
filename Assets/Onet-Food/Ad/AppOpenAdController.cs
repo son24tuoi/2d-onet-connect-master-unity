@@ -20,8 +20,8 @@ public class AppOpenAdController : MonoBehaviour
 
     // These ad units are configured to always serve test ads.
 #if UNITY_ANDROID
-    private const string _adUnitId = "ca-app-pub-3940256099942544/9257395921"; // Test
-    // private const string _adUnitId = "ca-app-pub-3685654137441776/8820257080";
+    // private const string _adUnitId = "ca-app-pub-3940256099942544/9257395921"; // Test
+    private const string _adUnitId = "ca-app-pub-3685654137441776/2039694845";
 #elif UNITY_IPHONE
         private const string _adUnitId = "ca-app-pub-3940256099942544/5575463023";
 #else

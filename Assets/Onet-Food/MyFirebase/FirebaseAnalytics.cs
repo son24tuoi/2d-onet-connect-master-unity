@@ -36,7 +36,7 @@ public class FirebaseAnalytics : MonoBehaviour
         if (testProfileSO.IsDeviceTest())
             return;
 
-        Parameter levelParam = new Parameter(Firebase.Analytics.FirebaseAnalytics.ParameterLevel, level);
+        Parameter levelParam = new Parameter(Firebase.Analytics.FirebaseAnalytics.ParameterLevel, level.ToString());
 
         Firebase.Analytics.FirebaseAnalytics.LogEvent(
             Firebase.Analytics.FirebaseAnalytics.EventLevelStart,
@@ -51,7 +51,7 @@ public class FirebaseAnalytics : MonoBehaviour
         if (testProfileSO.IsDeviceTest())
             return;
 
-        Parameter levelParam = new Parameter(Firebase.Analytics.FirebaseAnalytics.ParameterLevel, level);
+        Parameter levelParam = new Parameter(Firebase.Analytics.FirebaseAnalytics.ParameterLevel, level.ToString());
 
         Parameter elapsedSecondsParam = new Parameter("elapsed_seconds", elapsedSeconds);
 
@@ -68,7 +68,7 @@ public class FirebaseAnalytics : MonoBehaviour
         if (testProfileSO.IsDeviceTest())
             return;
 
-        Parameter levelParam = new Parameter(Firebase.Analytics.FirebaseAnalytics.ParameterLevel, level);
+        Parameter levelParam = new Parameter(Firebase.Analytics.FirebaseAnalytics.ParameterLevel, level.ToString());
 
         Firebase.Analytics.FirebaseAnalytics.LogEvent(
             Firebase.Analytics.FirebaseAnalytics.EventLevelUp,
@@ -91,7 +91,7 @@ public class FirebaseAnalytics : MonoBehaviour
             _ => ""
         });
 
-        Parameter levelParam = new Parameter(Firebase.Analytics.FirebaseAnalytics.ParameterLevel, level);
+        Parameter levelParam = new Parameter(Firebase.Analytics.FirebaseAnalytics.ParameterLevel, level.ToString());
 
         Parameter amountParam = new Parameter("amount", amount);
 
@@ -123,7 +123,7 @@ public class FirebaseAnalytics : MonoBehaviour
             _ => ""
         });
 
-        Parameter levelParam = new Parameter(Firebase.Analytics.FirebaseAnalytics.ParameterLevel, level);
+        Parameter levelParam = new Parameter(Firebase.Analytics.FirebaseAnalytics.ParameterLevel, level.ToString());
 
         Parameter amountParam = new Parameter("amount", amount);
 

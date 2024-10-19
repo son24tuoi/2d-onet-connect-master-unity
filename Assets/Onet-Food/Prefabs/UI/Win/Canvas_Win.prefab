@@ -3081,6 +3081,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlurBG
       objectReference: {fileID: 0}
+    - target: {fileID: 5829604838021905409, guid: d6843160b491c964f91c7ca53983298a, type: 3}
+      propertyPath: to
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6825182590688788306, guid: d6843160b491c964f91c7ca53983298a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

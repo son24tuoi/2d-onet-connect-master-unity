@@ -35,7 +35,14 @@ public class LevelManager : MonoBehaviour
 
     public void LoadProgressLevel()
     {
-        LoadProgressLevel(LevelData.LevelIndex, LevelData.NodeGrid.GetMap(), LevelData.IdCards);
+        if (LevelData.IsStarttingPlay)
+        {
+            LoadLevel(LevelData.LevelIndex);
+        }
+        else
+        {
+            LoadProgressLevel(LevelData.LevelIndex, LevelData.NodeGrid.GetMap(), LevelData.IdCards);
+        }
     }
 
     public void LoadProgressLevel(int index, int[,] map, int[] idCards)

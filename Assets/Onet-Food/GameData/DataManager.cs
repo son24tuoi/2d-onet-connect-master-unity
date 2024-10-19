@@ -147,6 +147,13 @@ public class DataManager : MonoBehaviour
         SaveData();
     }
 
+    public void SetIsStartingPlay(bool isStartingPlay)
+    {
+        Data.levelData.IsStarttingPlay = isStartingPlay;
+
+        SaveData();
+    }
+
     public void UpdateProgressLevel(int[,] map, int[] idCards, float elapsedSeconds, int starsReceived, int amountMatch)
     {
         if (!Data.levelData.IsPlaying)
