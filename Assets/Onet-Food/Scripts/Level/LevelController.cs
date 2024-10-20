@@ -64,6 +64,7 @@ public class LevelController : MyMonoBehaviour, IEventHandler
         ScreenDetector.OnChangeScreenOrientationEvent += SetPositionCamera;
 
         EventManager.Instance.Subcribe(EventID.UpdateProgressLevel, this);
+        EventManager.Instance.Subcribe(EventID.Revive, this);
     }
 
     private void OnDestroy()
@@ -75,6 +76,7 @@ public class LevelController : MyMonoBehaviour, IEventHandler
         ScreenDetector.OnChangeScreenOrientationEvent -= SetPositionCamera;
 
         EventManager.Instance.Unsubcribe(EventID.UpdateProgressLevel, this);
+        EventManager.Instance.Unsubcribe(EventID.Revive, this);
     }
 
     public void Init(LevelProfileSO levelProfileSO, int[,] graphMap, int[] idCards, float elapsedSeconds, int starsReceived, int amountMatch)
@@ -390,12 +392,28 @@ public class LevelController : MyMonoBehaviour, IEventHandler
             amountMatch: m_amountMatch);
     }
 
+    public void Revive()
+    {
+        if (IsPlaying)
+            return;
+
+        IsPlaying = true;
+        DataManager.SetIsPlaying(true);
+        timer.AddDuration(Settings.MoreTimeRevive);
+        timer.StartTimer();
+
+        gamePlayCanvas.Init();
+    }
+
     public void EventHandler(EventID eventID)
     {
         switch (eventID)
         {
             case EventID.UpdateProgressLevel:
                 UpdateProgressLevel();
+                break;
+            case EventID.Revive:
+                Revive();
                 break;
             default:
                 Debug.Log("Unknown event id");

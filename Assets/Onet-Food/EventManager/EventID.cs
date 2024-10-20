@@ -12,4 +12,5 @@ public enum EventID
     ShopCanvas = 9,
     ReceiveFreeCoin = 10,
     UpdateProgressLevel,
+    Revive,
 }
