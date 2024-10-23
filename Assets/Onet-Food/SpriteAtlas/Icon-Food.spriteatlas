@@ -1,0 +1,156 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Icon-Food
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: Android
+      m_MaxTextureSize: 8192
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 65
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 8
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: de7d676806d418a41bb43a8754008cb9, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 0f8b2a20401d68f4fa224cf27b76732b, type: 3}
+  - {fileID: 21300000, guid: 8b671870b057d264db36608d7ee7df05, type: 3}
+  - {fileID: 21300000, guid: ad2075906b57d764d89e94e800b15ca2, type: 3}
+  - {fileID: 21300000, guid: 17eabdd04009b99478d743722726d870, type: 3}
+  - {fileID: 21300000, guid: 1e9b88e0072481148ba2bd7627d394c0, type: 3}
+  - {fileID: 21300000, guid: c88a1de0f82b95b4cb3c3be614e6367a, type: 3}
+  - {fileID: 21300000, guid: 644a551123860a849835f9ee66ea8d04, type: 3}
+  - {fileID: 21300000, guid: 7da3c6f1ca391d745b2180b365a24da8, type: 3}
+  - {fileID: 21300000, guid: 7db4d502317128a40b9016af7887cb8c, type: 3}
+  - {fileID: 21300000, guid: f10a8d0248f4ae54a96e74902a682264, type: 3}
+  - {fileID: 21300000, guid: 720ff382552f3ae47b9ac1c6c5a1e1c6, type: 3}
+  - {fileID: 21300000, guid: 530d9743a44014a4b8a87cd8225b211e, type: 3}
+  - {fileID: 21300000, guid: e47a6f438a4aa4c4a8e1e39526b3b5b5, type: 3}
+  - {fileID: 21300000, guid: 0435584414cad9d4781de01afc3cb930, type: 3}
+  - {fileID: 21300000, guid: cacdfe840c57a5e42a2774e2526a3867, type: 3}
+  - {fileID: 21300000, guid: 1eff14b4b083c8645b3bdc23b0f88596, type: 3}
+  - {fileID: 21300000, guid: 5a6defc40f38f6f4b8414e49269e18f0, type: 3}
+  - {fileID: 21300000, guid: 4944cae444ddf794787cf2f4f8a4896d, type: 3}
+  - {fileID: 21300000, guid: b7b4f115c6f51df478ee68cba973b3ca, type: 3}
+  - {fileID: 21300000, guid: 33e98c15a625b534186100d38afce91e, type: 3}
+  - {fileID: 21300000, guid: 7a248065db7d78743ac6d757893d1603, type: 3}
+  - {fileID: 21300000, guid: 70211fc5da5625e4e94b9a87b77a97ea, type: 3}
+  - {fileID: 21300000, guid: fa366cc6c27313344a7e912a2e89a086, type: 3}
+  - {fileID: 21300000, guid: f1361b2757201844f94dd33808509bf4, type: 3}
+  - {fileID: 21300000, guid: 7b086a67282a1a04d8f719a4988ad0b7, type: 3}
+  - {fileID: 21300000, guid: ab25cf67788bab4459d1e61cb573edb4, type: 3}
+  - {fileID: 21300000, guid: 8db7e3f7f0e9b3340a90b9fea2e9aa36, type: 3}
+  - {fileID: 21300000, guid: 14c81d38146268645a6eb80c5cde3260, type: 3}
+  - {fileID: 21300000, guid: a7ea2a58567fbab42b0330ffab7d0e9a, type: 3}
+  - {fileID: 21300000, guid: a3327bb8bcda28944a9ab49a4a998ea5, type: 3}
+  - {fileID: 21300000, guid: b393889956bfc764b8ef23c154dd7fbd, type: 3}
+  - {fileID: 21300000, guid: 27a0c06a51f03e445962afd5587ea711, type: 3}
+  - {fileID: 21300000, guid: 1069bb8ac630ad441b6abad5536e498b, type: 3}
+  - {fileID: 21300000, guid: b33b9c5bd32bb6a4c931ee5c1a53bf83, type: 3}
+  - {fileID: 21300000, guid: b40f669bf38dd43488a001ed20fb621d, type: 3}
+  - {fileID: 21300000, guid: 2c0947abfc1532c41a13e1832c87a2af, type: 3}
+  - {fileID: 21300000, guid: e899794c2b680364c90260b1ad33b4c2, type: 3}
+  - {fileID: 21300000, guid: f1e39c6c0a3ec8240b11890d1e194da9, type: 3}
+  - {fileID: 21300000, guid: 5b48d82d7f7efc4499774b2e628129d1, type: 3}
+  - {fileID: 21300000, guid: 778acd3d08ad7504ebb06dabb6d3ff21, type: 3}
+  - {fileID: 21300000, guid: 46f40bad9c681ef46aa9a60580f511c5, type: 3}
+  - {fileID: 21300000, guid: 6c6114dde15ec8343860553e57bb2cc8, type: 3}
+  - {fileID: 21300000, guid: a5a0f2fd3a3806b46ae6e79d1dd1ccf1, type: 3}
+  - {fileID: 21300000, guid: bcf983de8d95bd94884ac2fd572c486b, type: 3}
+  - {fileID: 21300000, guid: 0865a9eeaaea3364990431cf98b91a56, type: 3}
+  - {fileID: 21300000, guid: 8aa2623fb7826f54fb1f0c50c62a393d, type: 3}
+  - {fileID: 21300000, guid: 2a5e793f10db5604488509329513f4a6, type: 3}
+  - {fileID: 21300000, guid: d262234fdf44b664491273340beade6b, type: 3}
+  - {fileID: 21300000, guid: 0895266ffdc74894c8724b037333d4d1, type: 3}
+  - {fileID: 21300000, guid: 11ac67efb54c01f40bc94e474980af7b, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - peanut
+  - oatmeal
+  - fruit-salad
+  - papaya
+  - carrot
+  - orange-juice
+  - banana
+  - smoothie
+  - watermelon
+  - cauliflower
+  - pineapple
+  - radish
+  - avocado
+  - grapes
+  - apple-cider
+  - strawberry
+  - soy-milk
+  - infused-water
+  - granola
+  - peanut-butter
+  - jam
+  - honey
+  - pickles
+  - green-tea
+  - butter
+  - almond
+  - broccoli
+  - bread
+  - olive-oil
+  - kimchi
+  - canned-food
+  - milk
+  - cheese
+  - lettuce
+  - tomato
+  - corn
+  - coconut
+  - mushroom
+  - orange
+  - vegetable
+  - egg
+  - garlic
+  - mashed-potato
+  - sunny-side-up
+  - red-beans
+  - spinach
+  - apple
+  - tofu
+  - yogurt
+  - boiled-egg
+  m_RenderDataMap: {}
+  m_Tag: Icon-Food
+  m_IsVariant: 0
