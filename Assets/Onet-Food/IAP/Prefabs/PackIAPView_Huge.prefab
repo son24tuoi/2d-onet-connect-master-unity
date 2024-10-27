@@ -649,7 +649,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6875855971359622460, guid: 094609ed0e0bb294487e098737f1cce6, type: 3}
       propertyPath: productId
-      value: com.oneartist.puzzle.onetfood.master.huge_pack
+      value: com.oneartist.puzzle.onetfarm.master.huge_pack
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 094609ed0e0bb294487e098737f1cce6, type: 3}

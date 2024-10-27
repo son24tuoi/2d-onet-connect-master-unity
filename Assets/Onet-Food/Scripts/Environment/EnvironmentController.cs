@@ -7,9 +7,10 @@ public class EnvironmentController : MonoBehaviour
     public static EnvironmentController Instance { get; private set; }
 
     public Camera mainCamera;
-    public Background.Background background;
+    public Transform background;
 
-    private float m_originCameraSize;
+    private float _originCameraSize;
+    private float _originBackgroundScale;
 
     private void Awake()
     {
@@ -18,13 +19,8 @@ public class EnvironmentController : MonoBehaviour
 
     private void Start()
     {
-        m_originCameraSize = mainCamera.orthographicSize;
-        background.Init();
-    }
-
-    private void FixedUpdate()
-    {
-        background.CheckChangeBackground();
+        _originCameraSize = mainCamera.orthographicSize;
+        _originBackgroundScale = background.localScale.x;
     }
 
     public void AdjustCamera(Vector3 position, float size)
@@ -36,12 +32,12 @@ public class EnvironmentController : MonoBehaviour
     public void SetPositionCamera(Vector3 position)
     {
         mainCamera.transform.position = position;
-        background.transform.position = position + Vector3.forward * 10;
+        background.position = position + Vector3.forward * 10;
     }
 
     public void SetSizeCamera(float size)
     {
         mainCamera.orthographicSize = size;
-        background.transform.localScale = Vector3.one * (size / m_originCameraSize);
+        background.localScale = _originBackgroundScale * (size / _originCameraSize) * Vector3.one;
     }
 }

@@ -2597,7 +2597,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: e27556e7b7b27634598e365c047e8cde, type: 2}
     - target: {fileID: 5193120605217890521, guid: cb713a5b844ae6c4d9787d9a6592049b, type: 3}
       propertyPath: productId
-      value: com.oneartist.puzzle.onetfood.master.coin_pack_2
+      value: com.oneartist.puzzle.onetfarm.master.coin_pack_2
       objectReference: {fileID: 0}
     - target: {fileID: 5369784645618084918, guid: cb713a5b844ae6c4d9787d9a6592049b, type: 3}
       propertyPath: m_IsActive
@@ -2735,7 +2735,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5193120605217890521, guid: cb713a5b844ae6c4d9787d9a6592049b, type: 3}
       propertyPath: productId
-      value: com.oneartist.puzzle.onetfood.master.coin_pack_5
+      value: com.oneartist.puzzle.onetfarm.master.coin_pack_5
       objectReference: {fileID: 0}
     - target: {fileID: 7463593113599550922, guid: cb713a5b844ae6c4d9787d9a6592049b, type: 3}
       propertyPath: rewardProfileSO
@@ -2861,7 +2861,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 3f1d00cb30f9b254595838b4a542ba37, type: 2}
     - target: {fileID: 5193120605217890521, guid: cb713a5b844ae6c4d9787d9a6592049b, type: 3}
       propertyPath: productId
-      value: com.oneartist.puzzle.onetfood.master.coin_pack_1
+      value: com.oneartist.puzzle.onetfarm.master.coin_pack_1
       objectReference: {fileID: 0}
     - target: {fileID: 5369784645618084918, guid: cb713a5b844ae6c4d9787d9a6592049b, type: 3}
       propertyPath: m_IsActive
@@ -2987,7 +2987,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 341d70326fd39874fb60a774e4155692, type: 2}
     - target: {fileID: 5193120605217890521, guid: cb713a5b844ae6c4d9787d9a6592049b, type: 3}
       propertyPath: productId
-      value: com.oneartist.puzzle.onetfood.master.coin_pack_3
+      value: com.oneartist.puzzle.onetfarm.master.coin_pack_3
       objectReference: {fileID: 0}
     - target: {fileID: 7463593113599550922, guid: cb713a5b844ae6c4d9787d9a6592049b, type: 3}
       propertyPath: rewardProfileSO
@@ -3303,7 +3303,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5193120605217890521, guid: cb713a5b844ae6c4d9787d9a6592049b, type: 3}
       propertyPath: productId
-      value: com.oneartist.puzzle.onetfood.master.coin_pack_4
+      value: com.oneartist.puzzle.onetfarm.master.coin_pack_4
       objectReference: {fileID: 0}
     - target: {fileID: 7463593113599550922, guid: cb713a5b844ae6c4d9787d9a6592049b, type: 3}
       propertyPath: rewardProfileSO
@@ -3827,6 +3827,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -75
       objectReference: {fileID: 0}
+    - target: {fileID: 6479755039185411530, guid: 3aadf82285c18964a9ca210c768d627f, type: 3}
+      propertyPath: productId
+      value: com.oneartist.puzzle.onetfarm.master.special_offer
+      objectReference: {fileID: 0}
     - target: {fileID: 7163057566670802747, guid: 3aadf82285c18964a9ca210c768d627f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -4039,7 +4043,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6756918422726523246, guid: c70de340c46cecf46b04baa0f6a34430, type: 3}
       propertyPath: _width
-      value: 2323
+      value: 1903
       objectReference: {fileID: 0}
     - target: {fileID: 6756918422726523246, guid: c70de340c46cecf46b04baa0f6a34430, type: 3}
       propertyPath: _height

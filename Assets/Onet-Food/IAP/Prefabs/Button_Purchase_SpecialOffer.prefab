@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b79b5624d944058bd39aad2b90fb275, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productId: com.oneartist.puzzle.onetfood.master.special_offer
+  productId: com.oneartist.puzzle.onetfarm.master.special_offer
   buttonType: 0
   consumePurchase: 1
   onTransactionsRestored:

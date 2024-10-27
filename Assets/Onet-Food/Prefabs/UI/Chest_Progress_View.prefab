@@ -27,7 +27,7 @@ RectTransform:
   m_GameObject: {fileID: 339807248306615935}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2560285368974104376}
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b093cbd3ae117429b8fbdf7462fd3363, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ab995621b716e4a6aa04fb7d790cfd7b, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -277,8 +277,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4285816575
-  m_fontColor: {r: 1, g: 0.36862746, b: 0.454902, a: 1}
+    rgba: 4291594752
+  m_fontColor: {r: 0, g: 0.5411765, b: 0.8, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -709,7 +709,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4eed32a7407614c08b1eb85093a08a39, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cee246b1525094ef2a71a480c2c783e7, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1333,7 +1333,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.513
+  m_Value: 0.32
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

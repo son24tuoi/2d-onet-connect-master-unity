@@ -64,26 +64,6 @@ MonoBehaviour:
     amount: 2
   - id: 24
     amount: 2
-  - id: 25
-    amount: 2
-  - id: 26
-    amount: 2
-  - id: 27
-    amount: 2
-  - id: 28
-    amount: 2
-  - id: 29
-    amount: 2
-  - id: 30
-    amount: 2
-  - id: 31
-    amount: 2
-  - id: 32
-    amount: 2
-  - id: 33
-    amount: 2
-  - id: 34
-    amount: 2
   alignmentData:
     alignmentTypes: 0000000000000000000000000000000006000000
     alignmentSearchType: 1

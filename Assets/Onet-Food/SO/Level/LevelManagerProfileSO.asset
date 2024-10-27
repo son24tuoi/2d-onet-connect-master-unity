@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: LevelManagerProfileSO
   m_EditorClassIdentifier: 
   levelProfiles:
+  - {fileID: 11400000, guid: e31cb653bcd84bd49bab02df356f1b67, type: 2}
+  - {fileID: 11400000, guid: 5efa9da5ca7474c45a8ac84bf4ab2a0f, type: 2}
   - {fileID: 11400000, guid: 12d44639adbb9de44af65cbaab01b3d1, type: 2}
   - {fileID: 11400000, guid: 351f0bbfc5ed8db49b0fc2c664213fe7, type: 2}
   - {fileID: 11400000, guid: 7a01d43ea0db5304b8cd8a303409dc5a, type: 2}
