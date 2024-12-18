@@ -94,6 +94,7 @@ public class RewardedAdController : MonoBehaviour
         else
         {
             Debug.LogError("Rewarded ad is not ready yet.");
+            LoadAd();
             onNotReady?.Invoke();
         }
 
