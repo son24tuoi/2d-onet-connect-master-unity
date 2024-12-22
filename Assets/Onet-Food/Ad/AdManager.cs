@@ -73,13 +73,13 @@ public class AdManager : MonoBehaviour
 
             appOpenAdController.LoadAd();
 
+            rewardedAdController.LoadAd();
+            interstitialAdController.LoadAd();
+
             if (adProfileSO.EnableBannerAd && !RemoveAd)
             {
                 bannerViewController.LoadAd();
             }
-
-            rewardedAdController.LoadAd();
-            interstitialAdController.LoadAd();
         });
 
         _iAdData.SaveInterstitialTime(DateTime.Now);
