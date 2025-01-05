@@ -60,6 +60,20 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
+        LoadingScene.OnLoadEvent += LoadSceneCallback;
+
+        ChangeVolumeMusic(AudioData.VolumeMusic);
+        ChangeVolumeSFX(AudioData.VolumeSFX);
+        PlayMusic(AudioData.MusicIndex);
+    }
+
+    private void OnDestroy()
+    {
+        LoadingScene.OnLoadEvent -= LoadSceneCallback;
+    }
+
+    private void LoadSceneCallback()
+    {
         ChangeVolumeMusic(AudioData.VolumeMusic);
         ChangeVolumeSFX(AudioData.VolumeSFX);
         PlayMusic(AudioData.MusicIndex);

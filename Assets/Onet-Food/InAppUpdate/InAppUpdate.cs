@@ -172,6 +172,11 @@ public class InAppUpdate : MonoBehaviour
             {
                 target.ShowUpdateCanvas();
             }
+
+            if (GUILayout.Button("On Error Event"))
+            {
+                InAppUpdate.OnErrorEvent?.Invoke();
+            }
         }
     }
 

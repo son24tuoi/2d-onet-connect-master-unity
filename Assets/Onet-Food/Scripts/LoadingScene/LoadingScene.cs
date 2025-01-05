@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class LoadingScene : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class LoadingScene : MonoBehaviour
 
     [Header("Config")]
     [SerializeField] private SceneType sceneType;
+
+    public static event Action OnLoadEvent;
 
     public enum SceneType
     {
@@ -25,6 +28,8 @@ public class LoadingScene : MonoBehaviour
 
     private IEnumerator IELoadSceneAsync(int sceneId)
     {
+        OnLoadEvent?.Invoke();
+
         float progressValue = 0f;
         slider.value = progressValue;
 

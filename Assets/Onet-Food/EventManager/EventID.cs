@@ -13,4 +13,5 @@ public enum EventID
     ReceiveFreeCoin = 10,
     UpdateProgressLevel,
     Revive,
+    Wait,
 }

@@ -10,6 +10,8 @@ public class DataManager : MonoBehaviour
 
     private DataController dataController;
 
+    public IDataController Controller => dataController;
+
     public Data Data
     {
         get => dataController.data;
@@ -41,7 +43,7 @@ public class DataManager : MonoBehaviour
 
     public void SaveData()
     {
-        dataController.Save();
+        dataController.SaveData();
     }
 
     public void WinLevel(int levelIndex, int score)

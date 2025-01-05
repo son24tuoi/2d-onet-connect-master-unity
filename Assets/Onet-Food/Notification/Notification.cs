@@ -25,11 +25,25 @@ public class Notification : MonoBehaviour, IEventHandlerWithData
     private void Start()
     {
         EventManager.Instance.Subcribe(EventID.Notification, this);
+        EventManager.Instance.Subcribe(EventID.Wait, this);
+
+        InAppUpdate.OnErrorEvent += InAppUpdateNotAvailable;
     }
 
     private void OnDestroy()
     {
         EventManager.Instance.Unsubcribe(EventID.Notification, this);
+        EventManager.Instance.Unsubcribe(EventID.Wait, this);
+
+        InAppUpdate.OnErrorEvent -= InAppUpdateNotAvailable;
+    }
+
+    private void InAppUpdateNotAvailable()
+    {
+        Show(
+            "Not Update Available",
+            NotificationColorType.Yellow
+        );
     }
 
     public void Show(NotificationData notificationData)
@@ -39,6 +53,19 @@ public class Notification : MonoBehaviour, IEventHandlerWithData
 
     public void Show(string message, NotificationColorType colorType)
     {
+        ShowMessage(message, colorType);
+
+        if (m_showRoutine != null)
+        {
+            StopCoroutine(m_showRoutine);
+        }
+
+        m_showRoutine = StartCoroutine(IEShow());
+    }
+
+    public void ShowMessage(string message, NotificationColorType colorType)
+    {
+        // Debug.Log(message + "_" + colorType.ToString());
         int index = (int)colorType;
         bool show = false;
 
@@ -51,17 +78,11 @@ public class Notification : MonoBehaviour, IEventHandlerWithData
                 messageTexts[i].SetText(message);
             }
         }
-
-        if (m_showRoutine != null)
-        {
-            StopCoroutine(m_showRoutine);
-        }
-
-        m_showRoutine = StartCoroutine(IEShow());
     }
 
     public IEnumerator IEShow()
     {
+        // Debug.Log("On");
         view.SetActive(true);
 
         yield return m_wait;
@@ -73,6 +94,20 @@ public class Notification : MonoBehaviour, IEventHandlerWithData
             });
     }
 
+    public void ShowWait(bool show)
+    {
+        if (show)
+        {
+            ShowMessage("Loading", NotificationColorType.White);
+            view.SetActive(true);
+        }
+        else
+        {
+            view.SetActive(false);
+            // Debug.Log("off");
+        }
+    }
+
     public void EventHandler<T>(EventData<T> eventData)
     {
         switch (eventData.eventID)
@@ -81,6 +116,13 @@ public class Notification : MonoBehaviour, IEventHandlerWithData
                 if (eventData.data is NotificationData notificationData)
                 {
                     Show(notificationData);
+                }
+                break;
+
+            case EventID.Wait:
+                if (eventData.data is bool show)
+                {
+                    ShowWait(show);
                 }
                 break;
 

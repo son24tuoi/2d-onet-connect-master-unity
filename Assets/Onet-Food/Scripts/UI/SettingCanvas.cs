@@ -34,4 +34,14 @@ public class SettingCanvas : Popup
             GameManager.Instance.Test();
         }
     }
+
+    public void OnClickSaveCloudButton()
+    {
+        GPGSManager.Instance.TryOpenSave(true);
+    }
+
+    public void OnClickLoadCloudButton()
+    {
+        GPGSManager.Instance.TryOpenSave(false);
+    }
 }

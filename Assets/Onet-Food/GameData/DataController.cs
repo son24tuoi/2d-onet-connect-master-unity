@@ -4,7 +4,7 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 
-public class DataController : MonoBehaviour
+public class DataController : MonoBehaviour, IDataController
 {
     private readonly string keyWord = "OnetConnect";
     private static readonly string fileName = "data.dat";
@@ -18,10 +18,10 @@ public class DataController : MonoBehaviour
     {
         fullPath = Path.Combine(Application.persistentDataPath, fileName);
 
-        Load();
+        LoadData();
     }
 
-    public void Save()
+    public void SaveData()
     {
         string dataToStore = JsonUtility.ToJson(data);
 
@@ -45,7 +45,7 @@ public class DataController : MonoBehaviour
         }
     }
 
-    public void Load()
+    public void LoadData()
     {
         data = new Data();
 
@@ -60,6 +60,24 @@ public class DataController : MonoBehaviour
         }
     }
 
+    public void LoadData(string jsonData)
+    {
+        data = new Data();
+
+        if (string.IsNullOrEmpty(jsonData))
+        {
+            Debug.Log("Data is null or empty!");
+        }
+        else if (string.IsNullOrWhiteSpace(jsonData))
+        {
+            Debug.Log("Data is null or white space!");
+        }
+        else
+        {
+            data = JsonUtility.FromJson<Data>(encryptData ? EncryptDecrypt(jsonData) : jsonData);
+        }
+    }
+
     public void DeleteData()
     {
         if (File.Exists(fullPath))
@@ -71,7 +89,20 @@ public class DataController : MonoBehaviour
     public void ClearData()
     {
         data = new Data();
-        Save();
+        SaveData();
+    }
+
+    public string GetData()
+    {
+        if (File.Exists(fullPath))
+        {
+            return File.ReadAllText(fullPath);
+        }
+        else
+        {
+            Debug.Log("Save file does not exits!");
+            return null;
+        }
     }
 
     private string EncryptDecrypt(string data)
@@ -88,14 +119,14 @@ public class DataController : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        Save();
+        SaveData();
     }
 
     private void OnApplicationPause(bool pauseStatus)
     {
         if (pauseStatus)
         {
-            Save();
+            SaveData();
         }
     }
 
@@ -113,12 +144,12 @@ public class DataController : MonoBehaviour
 
             if (GUILayout.Button("Save Data"))
             {
-                target.Save();
+                target.SaveData();
             }
 
             if (GUILayout.Button("Load Data"))
             {
-                target.Load();
+                target.LoadData();
             }
 
             if (GUILayout.Button("Clear Data"))
