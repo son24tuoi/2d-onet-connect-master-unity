@@ -236,9 +236,18 @@ public class GPGSManager : MonoBehaviour
             EventManager.Instance.Trigger(new EventData<bool>(EventID.Wait, false));
 
             string savedData = System.Text.ASCIIEncoding.ASCII.GetString(data);
-            dataController.LoadData(savedData);
-
-            Instantiate(loadCloudCanvasPrefab, transform);
+            if (string.IsNullOrEmpty(savedData))
+            {
+                TriggerEventNotification(new NotificationData(
+                    "No data load from the cloud",
+                    NotificationColorType.Yellow
+                ));
+            }
+            else
+            {
+                dataController.LoadData(savedData);
+                Instantiate(loadCloudCanvasPrefab, transform);
+            }
         }
         else
         {
