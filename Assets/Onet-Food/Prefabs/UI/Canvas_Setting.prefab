@@ -1002,7 +1002,7 @@ GameObject:
   - component: {fileID: 7945091279600899890}
   - component: {fileID: 5070829388134992137}
   - component: {fileID: 3985495643178828087}
-  - component: {fileID: 1498909510975505083}
+  - component: {fileID: 1708113383934241744}
   m_Layer: 5
   m_Name: Button_PrivacyPolicy
   m_TagString: Untagged
@@ -1113,9 +1113,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1498909510975505083}
-        m_TargetAssemblyTypeName: WebInterface, Assembly-CSharp
-        m_MethodName: OpenWebsite
+      - m_Target: {fileID: 1708113383934241744}
+        m_TargetAssemblyTypeName: WebViewButton, Assembly-CSharp
+        m_MethodName: OnClickButton
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1125,7 +1125,7 @@ MonoBehaviour:
           m_StringArgument: https://sites.google.com/view/one-artist/privacy-policy
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1498909510975505083
+--- !u!114 &1708113383934241744
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1134,7 +1134,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1528253286670506604}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed30ae2779384304da572cdbe6ef5f8f, type: 3}
+  m_Script: {fileID: 11500000, guid: c84aaad5c485b7a4eab34402a5a143cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1576063967891656792
@@ -4547,6 +4547,10 @@ PrefabInstance:
     - target: {fileID: 4285243321215063124, guid: 4950f730de1ba2c41927a47bdc597e44, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353333752908690317, guid: 4950f730de1ba2c41927a47bdc597e44, type: 3}
+      propertyPath: m_Size
+      value: 0.73333335
       objectReference: {fileID: 0}
     - target: {fileID: 5780200341688003964, guid: 4950f730de1ba2c41927a47bdc597e44, type: 3}
       propertyPath: m_AnchorMax.x

@@ -46,7 +46,7 @@ public class GoogleMobileAdsController : MonoBehaviour
         {
             MaxAdContentRating = MaxAdContentRating.G,
             TagForChildDirectedTreatment = TagForChildDirectedTreatment.True,
-            TestDeviceIds = TestDeviceIds
+            // TestDeviceIds = TestDeviceIds
         };
         MobileAds.SetRequestConfiguration(requestConfiguration);
 
