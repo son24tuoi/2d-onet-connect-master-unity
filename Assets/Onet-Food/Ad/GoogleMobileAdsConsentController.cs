@@ -34,13 +34,13 @@ public class GoogleMobileAdsConsentController : MonoBehaviour
         {
             // False means users are not under age.
             TagForUnderAgeOfConsent = false,
-            ConsentDebugSettings = new ConsentDebugSettings
-            {
-                // For debugging consent settings by geography.
-                DebugGeography = DebugGeography.Disabled,
-                // https://developers.google.com/admob/unity/test-ads
-                TestDeviceHashedIds = GoogleMobileAdsController.TestDeviceIds,
-            }
+            // ConsentDebugSettings = new ConsentDebugSettings
+            // {
+            //     // For debugging consent settings by geography.
+            //     DebugGeography = DebugGeography.Disabled,
+            //     // https://developers.google.com/admob/unity/test-ads
+            //     TestDeviceHashedIds = GoogleMobileAdsController.TestDeviceIds,
+            // }
         };
 
         // Combine the callback with an error popup handler.

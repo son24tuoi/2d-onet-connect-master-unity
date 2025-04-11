@@ -14,4 +14,5 @@ public enum EventID
     UpdateProgressLevel,
     Revive,
     Wait,
+    IgnoreUI,
 }

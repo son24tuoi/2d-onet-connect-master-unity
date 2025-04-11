@@ -72,6 +72,11 @@ public class InterstitialAdController : MonoBehaviour
         });
     }
 
+    public bool CanShowAd()
+    {
+        return _interstitialAd != null && _interstitialAd.CanShowAd();
+    }
+
     /// <summary>
     /// Shows the ad.
     /// </summary>

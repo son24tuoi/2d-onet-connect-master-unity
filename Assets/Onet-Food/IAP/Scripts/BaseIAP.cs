@@ -11,12 +11,24 @@ public class BaseIAP : MonoBehaviour
 
     public virtual void OnPurchaseCompleted(Product purchasedProduct)
     {
-
+        EventManager.Instance.Trigger(new EventData<NotificationData>(
+            EventID.Notification,
+            new NotificationData(
+                "Purchase Completed",
+                NotificationColorType.Green
+            )
+        ));
     }
 
     public virtual void OnPurchaseFailed(Product product, PurchaseFailureDescription failureDescription)
     {
-
+        EventManager.Instance.Trigger(new EventData<NotificationData>(
+            EventID.Notification,
+            new NotificationData(
+                "Purchase Failed",
+                NotificationColorType.Red
+            )
+        ));
     }
 
 

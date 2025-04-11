@@ -17,6 +17,7 @@ public class UIController : MonoBehaviour, IEventHandler, IEventHandlerWithData
     public LoseCanvas loseCanvas;
     public ContinuePlayLevelCanvas continuePlayLevelCanvas;
     public ShopCanvas shopCanvas;
+    [SerializeField] private GameObject ignoreUI;
 
     [Header("Prefab")]
     public TutorialCanvas tutorialCanvasPrefab;
@@ -41,6 +42,7 @@ public class UIController : MonoBehaviour, IEventHandler, IEventHandlerWithData
         EventManager.Instance.Subcribe(EventID.Setting, this as IEventHandler);
         EventManager.Instance.Subcribe(EventID.ShopCanvas, this as IEventHandler);
         EventManager.Instance.Subcribe(EventID.SupportItemShop, this as IEventHandlerWithData);
+        EventManager.Instance.Subcribe(EventID.IgnoreUI, this as IEventHandlerWithData);
 
         TutorialButton.OnTutorialEvent += ShowTutorialCanvas;
     }
@@ -50,6 +52,7 @@ public class UIController : MonoBehaviour, IEventHandler, IEventHandlerWithData
         EventManager.Instance.Unsubcribe(EventID.Setting, this as IEventHandler);
         EventManager.Instance.Unsubcribe(EventID.ShopCanvas, this as IEventHandler);
         EventManager.Instance.Unsubcribe(EventID.SupportItemShop, this as IEventHandlerWithData);
+        EventManager.Instance.Unsubcribe(EventID.IgnoreUI, this as IEventHandlerWithData);
 
         TutorialButton.OnTutorialEvent -= ShowTutorialCanvas;
     }
@@ -153,7 +156,7 @@ public class UIController : MonoBehaviour, IEventHandler, IEventHandlerWithData
             case EventID.Setting:
                 ShowSettingCanvas();
                 break;
-            
+
             case EventID.ShopCanvas:
                 ShowShopCanvas();
                 break;
@@ -172,6 +175,12 @@ public class UIController : MonoBehaviour, IEventHandler, IEventHandlerWithData
                 if (eventData.data is ItemsData.ItemType itemType)
                 {
                     ShowSupportItemShopCanvas(itemType);
+                }
+                break;
+            case EventID.IgnoreUI:
+                if (eventData.data is bool show)
+                {
+                    ignoreUI.SetActive(show);
                 }
                 break;
             default:

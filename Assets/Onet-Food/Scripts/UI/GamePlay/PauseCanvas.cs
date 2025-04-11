@@ -39,8 +39,11 @@ public class PauseCanvas : Popup
 
     private void BackHome()
     {
-        base.Exit();
-        GameManager.Instance.BackToHome();
+        AdManager.Instance.CheckShowInterstitialAd(() =>
+        {
+            base.Exit();
+            GameManager.Instance.BackToHome();
+        });
     }
 
     public void OnClickReplayButton()

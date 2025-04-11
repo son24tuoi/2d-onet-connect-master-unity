@@ -51,6 +51,8 @@ public class AdManager : MonoBehaviour
 
     private LevelData _levelData;
 
+    private WaitForSecondsRealtime _wait = new WaitForSecondsRealtime(1f);
+
     private void Awake()
     {
         if (Instance == null)
@@ -168,6 +170,11 @@ public class AdManager : MonoBehaviour
         });
     }
 
+    public void CheckShowInterstitialAd(Action onCloseAndNotReady)
+    {
+        CheckShowInterstitialAd(onCloseAndNotReady, onCloseAndNotReady);
+    }
+
     public void CheckShowInterstitialAd(Action onClose, Action onNotReady)
     {
         if (RemoveAd ||
@@ -177,11 +184,26 @@ public class AdManager : MonoBehaviour
             return;
         }
 
-        ShowInterstitialAd(onClose, onNotReady);
+        StartCoroutine(ShowInterstitialAd(onClose, onNotReady));
     }
 
-    public void ShowInterstitialAd(Action onClose, Action onNotReady)
+    public IEnumerator ShowInterstitialAd(Action onClose, Action onNotReady)
     {
+        if (interstitialAdController.CanShowAd())
+        {
+            EventManager.Instance.Trigger(new EventData<NotificationData>(
+                EventID.Notification,
+                new NotificationData(
+                    "Ad Break",
+                    NotificationColorType.White
+                )
+            ));
+
+            EventManager.Instance.Trigger(new EventData<bool>(EventID.IgnoreUI, true));
+            yield return _wait;
+            EventManager.Instance.Trigger(new EventData<bool>(EventID.IgnoreUI, false));
+        }
+
         _isShowingAd = true;
         interstitialAdController.ShowAd(onClose: () =>
         {

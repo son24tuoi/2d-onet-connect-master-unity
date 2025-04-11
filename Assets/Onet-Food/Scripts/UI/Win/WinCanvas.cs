@@ -55,7 +55,7 @@ public class WinCanvas : Popup
     {
         Exit(() =>
         {
-            CheckShowInterstitialAd(() =>
+            AdManager.Instance.CheckShowInterstitialAd(() =>
             {
                 GameManager.Instance.NextLevel();
             });
@@ -64,7 +64,7 @@ public class WinCanvas : Popup
 
     public void OnClickHomeButton()
     {
-        CheckShowInterstitialAd(() =>
+        AdManager.Instance.CheckShowInterstitialAd(() =>
         {
             GameManager.Instance.BackToHome();
             Exit();
@@ -73,17 +73,12 @@ public class WinCanvas : Popup
 
     public void OnClickReplayButton()
     {
-        CheckShowInterstitialAd(() =>
+        AdManager.Instance.CheckShowInterstitialAd(() =>
         {
             Exit(() =>
             {
                 GameManager.Instance.PlayLevel();
             });
         });
-    }
-
-    private void CheckShowInterstitialAd(Action onCloseAndNotReady)
-    {
-        AdManager.Instance.CheckShowInterstitialAd(onCloseAndNotReady, onCloseAndNotReady);
     }
 }
