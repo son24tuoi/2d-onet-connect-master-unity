@@ -1340,6 +1340,7 @@ GameObject:
   - component: {fileID: 1729317911722354685}
   - component: {fileID: 1729317911722354684}
   - component: {fileID: 7005309756371772394}
+  - component: {fileID: 8652569065703139080}
   m_Layer: 5
   m_Name: Canvas_Setting
   m_TagString: Untagged
@@ -1446,6 +1447,18 @@ MonoBehaviour:
   m_tweenFadeCanvasGroup: {fileID: 578612691781346739}
   gameProfileSO: {fileID: 11400000, guid: 95e388c7a38002241979d9e64391f325, type: 2}
   deviceId: {fileID: 669920353306793675}
+--- !u!114 &8652569065703139080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729317911722354673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa2bd815ac0e187468231bfad843e4ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2049017753735179640
 GameObject:
   m_ObjectHideFlags: 0

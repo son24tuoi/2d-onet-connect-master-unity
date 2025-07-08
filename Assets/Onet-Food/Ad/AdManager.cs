@@ -19,29 +19,16 @@ public class AdManager : MonoBehaviour
     [SerializeField] private RewardedAdController rewardedAdController;
     [SerializeField] private InterstitialAdController interstitialAdController;
 
+
     [Space(10)]
     public GameObject test;
 
     [Space(10)]
     public AdProfileSO adProfileSO;
 
-    private DataManager m_dataManager;
-
-    public DataManager DataManager
-    {
-        get
-        {
-            if (ReferenceEquals(m_dataManager, null))
-            {
-                m_dataManager = DataManager.Instance;
-            }
-            return m_dataManager;
-        }
-    }
-
-    public bool IsAppOpenAdReady => appOpenAdController.IsAdAvailable;
-
-    public bool RemoveAd => DataManager.Data.iapData.RemoveAd;
+    private bool _isShowNativeOverlayAd = false;
+    private List<INativeOverlayAdView> nativeOverlayAdViews = new List<INativeOverlayAdView>();
+    private DataManager _dataManager;
 
     private bool _isInitialized = false;
 
@@ -51,7 +38,29 @@ public class AdManager : MonoBehaviour
 
     private LevelData _levelData;
 
-    private WaitForSecondsRealtime _wait = new WaitForSecondsRealtime(1f);
+    private readonly WaitForSecondsRealtime _wait1s = new WaitForSecondsRealtime(1f);
+
+    public DataManager DataManager
+    {
+        get
+        {
+            if (ReferenceEquals(_dataManager, null))
+            {
+                _dataManager = DataManager.Instance;
+            }
+            return _dataManager;
+        }
+    }
+
+    public bool IsAppOpenAdReady => appOpenAdController.IsAdAvailable;
+
+    public bool RemoveAd => DataManager.Data.iapData.RemoveAd;
+
+    public bool IsShowNativeOverlayAd
+    {
+        get => _isShowNativeOverlayAd;
+        set => _isShowNativeOverlayAd = value;
+    }
 
     private void Awake()
     {
@@ -200,7 +209,7 @@ public class AdManager : MonoBehaviour
             ));
 
             EventManager.Instance.Trigger(new EventData<bool>(EventID.IgnoreUI, true));
-            yield return _wait;
+            yield return _wait1s;
             EventManager.Instance.Trigger(new EventData<bool>(EventID.IgnoreUI, false));
         }
 
@@ -220,5 +229,34 @@ public class AdManager : MonoBehaviour
     public void OnRemoveAd()
     {
         bannerViewController.HideAd();
+    }
+
+    public void AddNativeOverlayView(INativeOverlayAdView adView)
+    {
+        nativeOverlayAdViews.Add(adView);
+    }
+
+    public void RemoveNativeOverlayView(INativeOverlayAdView adView)
+    {
+        nativeOverlayAdViews.Remove(adView);
+
+        if (nativeOverlayAdViews.Count == 0)
+            IsShowNativeOverlayAd = false;
+    }
+
+    public void ShowNativeOverlayViews()
+    {
+        for (int i = 0; i < nativeOverlayAdViews.Count; i++)
+        {
+            nativeOverlayAdViews[i].Show();
+        }
+    }
+
+    public void HideNativeOverlayViews()
+    {
+        for (int i = 0; i < nativeOverlayAdViews.Count; i++)
+        {
+            nativeOverlayAdViews[i].Hide();
+        }
     }
 }
