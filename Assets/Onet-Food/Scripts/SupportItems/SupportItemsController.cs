@@ -51,8 +51,6 @@ public class SupportItemsController : MyMonoBehaviour, IEventHandlerWithData
 
             levelController.UseSupportItem(itemType);
             UpdateButtons();
-
-            FirebaseManager.firebaseAnalytics.EventSpendSupportItem(itemType, gameProfileSO.currentLevelIndex, 1);
         }
         else
         {
@@ -103,8 +101,6 @@ public class SupportItemsController : MyMonoBehaviour, IEventHandlerWithData
                 $"Get 1 {itemType} item",
                 NotificationColorType.Green
             ));
-
-            FirebaseManager.firebaseAnalytics.EventEarnSupportItem(itemType, TransactionType.Coin, gameProfileSO.currentLevelIndex, 1);
         }
         else
         {
@@ -130,7 +126,6 @@ public class SupportItemsController : MyMonoBehaviour, IEventHandlerWithData
                 reward ? NotificationColorType.Green : NotificationColorType.Red
             ));
 
-            FirebaseManager.firebaseAnalytics.EventEarnSupportItem(itemType, TransactionType.Ad, gameProfileSO.currentLevelIndex, 1);
         }, onClose: () =>
         {
 

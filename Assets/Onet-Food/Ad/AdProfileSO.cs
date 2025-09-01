@@ -75,8 +75,6 @@ public class AdProfileSO : ScriptableObject
                     interstitialAdCooldownBySecond = target.interstitialAdCooldownBySecond,
                     levelStartShowInterstitialAd = target.levelStartShowInterstitialAd
                 };
-
-                FirebaseUtilities.SaveJsonData(adConfigData, "ad.json");
             }
         }
     }

@@ -26,16 +26,12 @@ public class Notification : MonoBehaviour, IEventHandlerWithData
     {
         EventManager.Instance.Subcribe(EventID.Notification, this);
         EventManager.Instance.Subcribe(EventID.Wait, this);
-
-        InAppUpdate.OnErrorEvent += InAppUpdateNotAvailable;
     }
 
     private void OnDestroy()
     {
         EventManager.Instance.Unsubcribe(EventID.Notification, this);
         EventManager.Instance.Unsubcribe(EventID.Wait, this);
-
-        InAppUpdate.OnErrorEvent -= InAppUpdateNotAvailable;
     }
 
     private void InAppUpdateNotAvailable()

@@ -20,12 +20,6 @@ public class AppOpenAdFirstTime : MyMonoBehaviour
             LoadingUI(false);
         }
 
-        AppOpenAdController.OnCloseAdEvent += CloseAppOpenAdCallback;
-    }
-
-    private void OnDestroy()
-    {
-        AppOpenAdController.OnCloseAdEvent -= CloseAppOpenAdCallback;
     }
 
     private void CloseAppOpenAdCallback()

@@ -187,7 +187,7 @@ QualitySettings:
     customRenderPipeline: {fileID: 0}
     excludedTargetPlatforms: []
   - serializedVersion: 2
-    name: Ultra
+    name: Default
     pixelLightCount: 4
     shadows: 0
     shadowResolution: 2
@@ -204,7 +204,7 @@ QualitySettings:
     antiAliasing: 8
     softParticles: 0
     softVegetation: 1
-    realtimeReflectionProbes: 1
+    realtimeReflectionProbes: 0
     billboardsFaceCameraPosition: 1
     vSyncCount: 0
     lodBias: 2

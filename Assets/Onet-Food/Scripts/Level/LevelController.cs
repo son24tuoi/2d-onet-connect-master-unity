@@ -178,8 +178,6 @@ public class LevelController : MyMonoBehaviour, IEventHandler
         gamePlayCanvas.Init();
 
         SetupCamera();
-
-        FirebaseManager.firebaseAnalytics.EventLevelStart(gameProfileSO.currentLevelIndex);
     }
 
     private void SetupCamera()
@@ -194,10 +192,10 @@ public class LevelController : MyMonoBehaviour, IEventHandler
             return;
 
         Vector3 cameraPos = new Vector3((float)(graph.Width - 1) / 2f, (float)(graph.Height - 1) / 2f, -10);
-        Debug.Log("cameraPos: " + cameraPos);
+        // Debug.Log("cameraPos: " + cameraPos);
         EnvironmentController.SetPositionCamera(cameraPos);
         Vector3 offset = Vector3.right * (EnvironmentController.mainCamera.ScreenToWorldPoint(gamePlayCanvas.playingArea.position).x - cameraPos.x);
-        Debug.Log("offset: " + offset);
+        // Debug.Log("offset: " + offset);
         EnvironmentController.SetPositionCamera(cameraPos - offset);
     }
 
@@ -341,8 +339,6 @@ public class LevelController : MyMonoBehaviour, IEventHandler
             IsPlaying = false;
             DataManager.SetIsStartingPlay(true);
         });
-
-        FirebaseManager.firebaseAnalytics.EventLevelEnd(gameProfileSO.currentLevelIndex, gameProfileSO.elapsedSeconds);
     }
 
     public void Lose()
@@ -383,7 +379,7 @@ public class LevelController : MyMonoBehaviour, IEventHandler
         if (!IsPlaying)
             return;
 
-        Debug.Log("Save Progress");
+        // Debug.Log("Save Progress");
         DataManager.UpdateProgressLevel(
             map: graph.GetMap(),
             idCards: graphView.GetIdCards().ToArray(),

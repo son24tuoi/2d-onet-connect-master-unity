@@ -4,8 +4,5 @@ using UnityEngine;
 
 public class CheatCanvas : MonoBehaviour
 {
-    public void OnClickGPGSButton()
-    {
-        GPGSManager.Instance.ShowTestPopup();
-    }
+    
 }

@@ -122,7 +122,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2705035892384925103}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: InterstitialAdController, Assembly-CSharp
         m_MethodName: ShowAdTest
         m_Mode: 1
@@ -256,7 +256,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3496139335795293517}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RewardedAdController, Assembly-CSharp
         m_MethodName: DestroyAd
         m_Mode: 1
@@ -602,7 +602,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3496139335089160736}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BannerViewController, Assembly-CSharp
         m_MethodName: DestroyAd
         m_Mode: 1
@@ -871,7 +871,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2705035892384925103}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: InterstitialAdController, Assembly-CSharp
         m_MethodName: DestroyAd
         m_Mode: 1
@@ -1128,7 +1128,7 @@ RectTransform:
   m_Children:
   - {fileID: 3288759966248293683}
   m_Father: {fileID: 3496139336328580780}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1318,7 +1318,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3496139335089160736}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BannerViewController, Assembly-CSharp
         m_MethodName: LoadAd
         m_Mode: 1
@@ -1452,7 +1452,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3496139335795293517}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RewardedAdController, Assembly-CSharp
         m_MethodName: ShowAdTest
         m_Mode: 1
@@ -1586,7 +1586,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2705035892384925103}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: InterstitialAdController, Assembly-CSharp
         m_MethodName: LoadAd
         m_Mode: 1
@@ -1997,7 +1997,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3496139336156789626}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AppOpenAdController, Assembly-CSharp
         m_MethodName: LoadAd
         m_Mode: 1
@@ -2009,51 +2009,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &2931233236197773275
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1833723636485859394}
-  - component: {fileID: 2705035892384925103}
-  m_Layer: 0
-  m_Name: InterstitialAd
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1833723636485859394
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2931233236197773275}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3496139336340961286}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2705035892384925103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2931233236197773275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94aa5269cbcb84f47a7dfb465fab75a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  adLoadedStatus: {fileID: 5808846196856922198}
 --- !u!1 &3016029787291568653
 GameObject:
   m_ObjectHideFlags: 0
@@ -2189,142 +2144,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &3496139335089160742
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3496139335089160743}
-  - component: {fileID: 3496139335089160736}
-  m_Layer: 0
-  m_Name: BannerView
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3496139335089160743
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3496139335089160742}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3496139336340961286}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3496139335089160736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3496139335089160742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6570e8a2fc414a142814d3066b56dac5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  adLoadedStatus: {fileID: 2736680217892523026}
-  adLoaded: 0
---- !u!1 &3496139335795293507
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3496139335795293516}
-  - component: {fileID: 3496139335795293517}
-  m_Layer: 0
-  m_Name: RewardedAd
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3496139335795293516
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3496139335795293507}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3496139336340961286}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3496139335795293517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3496139335795293507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d12f9475d606c3844ac876b7dc8a203d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  adLoadedStatus: {fileID: 838215989717970430}
---- !u!1 &3496139336156789624
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3496139336156789625}
-  - component: {fileID: 3496139336156789626}
-  m_Layer: 0
-  m_Name: AppOpenAd
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3496139336156789625
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3496139336156789624}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3496139336340961286}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3496139336156789626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3496139336156789624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01c236b9a198eef41bce9246a14e816f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  adLoadedStatus: {fileID: 7895486913403241222}
 --- !u!1 &3496139336328580770
 GameObject:
   m_ObjectHideFlags: 0
@@ -2354,7 +2173,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3496139336340961286}
   - {fileID: 18580238305531138}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -2371,78 +2189,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 448aedad40dab6e45bf17dc6dcab4aca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  googleMobileAdsController: {fileID: 3496139336340961287}
-  appOpenAdController: {fileID: 3496139336156789626}
-  bannerViewController: {fileID: 3496139335089160736}
-  rewardedAdController: {fileID: 3496139335795293517}
-  interstitialAdController: {fileID: 2705035892384925103}
   test: {fileID: 2208286472638267446}
   adProfileSO: {fileID: 11400000, guid: 6ee19c30396087948b389cf056b7c5da, type: 2}
---- !u!1 &3496139336340961285
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3496139336340961286}
-  - component: {fileID: 3496139336340961287}
-  - component: {fileID: 3496139336340961280}
-  m_Layer: 0
-  m_Name: GoogleMobileAdsController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3496139336340961286
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3496139336340961285}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3496139336156789625}
-  - {fileID: 3496139335089160743}
-  - {fileID: 3496139335795293516}
-  - {fileID: 1833723636485859394}
-  m_Father: {fileID: 3496139336328580780}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3496139336340961287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3496139336340961285}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 642e3ad8c7e5a7141826ddd3705622b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _consentController: {fileID: 3496139336340961280}
---- !u!114 &3496139336340961280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3496139336340961285}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 149dcf9b816f62245954873cc65b8639, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _privacyButton: {fileID: 0}
-  _errorPopup: {fileID: 0}
-  _errorText: {fileID: 0}
 --- !u!1 &3523309696075121366
 GameObject:
   m_ObjectHideFlags: 0
@@ -2700,7 +2448,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3496139336156789626}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AppOpenAdController, Assembly-CSharp
         m_MethodName: ShowAd
         m_Mode: 1
@@ -3239,7 +2987,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3496139335089160736}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BannerViewController, Assembly-CSharp
         m_MethodName: HideAd
         m_Mode: 1
@@ -3643,7 +3391,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3496139336156789626}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AppOpenAdController, Assembly-CSharp
         m_MethodName: DestroyAd
         m_Mode: 1
@@ -3934,7 +3682,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3496139335089160736}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BannerViewController, Assembly-CSharp
         m_MethodName: ShowAd
         m_Mode: 1
@@ -5210,7 +4958,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3496139335795293517}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RewardedAdController, Assembly-CSharp
         m_MethodName: LoadAd
         m_Mode: 1
