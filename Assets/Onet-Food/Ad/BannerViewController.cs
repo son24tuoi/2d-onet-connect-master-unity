@@ -161,8 +161,6 @@ public class BannerViewController : MonoBehaviour
             Debug.Log(String.Format("Banner view paid {0} {1}.",
                 adValue.Value,
                 adValue.CurrencyCode));
-
-            FirebaseManager.Instance.firebaseAnalytics.EventAdImpression(adValue);
         };
         // Raised when an impression is recorded for an ad.
         _bannerView.OnAdImpressionRecorded += () =>

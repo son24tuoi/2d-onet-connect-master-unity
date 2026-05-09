@@ -72,18 +72,4 @@ public class MyMonoBehaviour : MonoBehaviour
             return m_environmentController;
         }
     }
-
-    protected FirebaseManager m_firebaseManager;
-
-    public FirebaseManager FirebaseManager
-    {
-        get
-        {
-            if (ReferenceEquals(m_firebaseManager, null))
-            {
-                m_firebaseManager = FirebaseManager.Instance;
-            }
-            return m_firebaseManager;
-        }
-    }
 }

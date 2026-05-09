@@ -7,8 +7,8 @@ public class NativeOverlayAdController : MonoBehaviour
 {
     // These ad units are configured to always serve test ads.
 #if UNITY_ANDROID
-    // private const string _adUnitId = "ca-app-pub-3940256099942544/2247696110";
-    private const string _adUnitId = "ca-app-pub-3685654137441776/4038636134";
+    private const string _adUnitId = "ca-app-pub-3940256099942544/2247696110";  // Test
+    // private const string _adUnitId = "ca-app-pub-3685654137441776/4038636134";
 #elif UNITY_IPHONE
         private const string _adUnitId = "ca-app-pub-3940256099942544/3986624511";
 #else
@@ -86,7 +86,7 @@ public class NativeOverlayAdController : MonoBehaviour
             RegisterEventHandlers(ad);
 
             // Inform the UI that the ad is ready.
-            AdLoadedStatus?.SetActive(true);
+            // AdLoadedStatus?.SetActive(true);
         });
     }
 
@@ -192,7 +192,7 @@ public class NativeOverlayAdController : MonoBehaviour
         }
 
         // Inform the UI that the ad is not ready.
-        AdLoadedStatus?.SetActive(false);
+        // AdLoadedStatus?.SetActive(false);
     }
 
     /// <summary>

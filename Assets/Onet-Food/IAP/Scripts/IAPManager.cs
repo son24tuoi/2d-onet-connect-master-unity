@@ -12,8 +12,8 @@ public class IAPManager : MonoBehaviour
     public static event Action OnRemoveAdEvent;
 
     [Header("Element")]
-    public Transform uiParent;
     public RemoveAdCanvas removeAdCanvasPrefab;
+    public FakeStoreCanvas fakeStoreCanvasPrefab;
 
     private DataManager m_dataManager;
 
@@ -44,10 +44,25 @@ public class IAPManager : MonoBehaviour
     }
 
     private RemoveAdCanvas m_removeAdCanvas;
+    private FakeStoreCanvas m_fakeStoreCanvas;
 
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+            Init();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void Init()
+    {
+
     }
 
     private void Start()
@@ -64,7 +79,7 @@ public class IAPManager : MonoBehaviour
     {
         if (m_removeAdCanvas == null)
         {
-            m_removeAdCanvas = Instantiate(removeAdCanvasPrefab, uiParent);
+            m_removeAdCanvas = Instantiate(removeAdCanvasPrefab);
         }
         else
         {
@@ -81,4 +96,18 @@ public class IAPManager : MonoBehaviour
     }
 
     public void GetReward(RewardProfileSO rewardProfileSO) => DataManager.SaveReward(rewardProfileSO);
+
+    public void ShowFakeStorePopup(Action onComplete, Action onCancel)
+    {
+        if (m_fakeStoreCanvas == null)
+        {
+            m_fakeStoreCanvas = Instantiate(fakeStoreCanvasPrefab);
+        }
+        else
+        {
+            m_fakeStoreCanvas.gameObject.SetActive(true);
+        }
+
+        m_fakeStoreCanvas.Setup(onComplete, onCancel);
+    }
 }

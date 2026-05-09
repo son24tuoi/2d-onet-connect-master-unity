@@ -15,8 +15,8 @@ public class InterstitialAdController : MonoBehaviour
 
     // These ad units are configured to always serve test ads.
 #if UNITY_ANDROID
-    // private const string _adUnitId = "ca-app-pub-3940256099942544/1033173712"; // Test
-    private const string _adUnitId = "ca-app-pub-3685654137441776/3265146608";
+    private const string _adUnitId = "ca-app-pub-3940256099942544/1033173712"; // Test
+    // private const string _adUnitId = "ca-app-pub-3685654137441776/3265146608";
 #elif UNITY_IPHONE
         private const string _adUnitId = "ca-app-pub-3940256099942544/4411468910";
 #else
@@ -145,8 +145,6 @@ public class InterstitialAdController : MonoBehaviour
             Debug.Log(String.Format("Interstitial ad paid {0} {1}.",
                 adValue.Value,
                 adValue.CurrencyCode));
-
-            FirebaseManager.Instance.firebaseAnalytics.EventAdImpression(adValue);
         };
         // Raised when an impression is recorded for an ad.
         ad.OnAdImpressionRecorded += () =>

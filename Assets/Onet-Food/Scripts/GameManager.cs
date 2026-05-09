@@ -12,14 +12,10 @@ public class GameManager : MonoBehaviour
     public GameObject uiCheat;
 
     [Space(5)]
-    public InAppReview inAppReview;
-
-    [Space(5)]
     public FPSDisplay fpsDisplay;
 
     [Space(10)]
     public GameProfileSO gameProfileSO;
-    public TestProfileSO testProfileSO;
     public RewardProfileSO rewardProfileSOForWin;
 
     private DataManager dataManager;
@@ -99,8 +95,6 @@ public class GameManager : MonoBehaviour
 
         uiController.ShowWinCanvas();
 
-        FirebaseManager.Instance.firebaseAnalytics.EventLevelUp(gameProfileSO.currentLevelIndex);
-
         CheckShowInAppReview();
 
         CheckShowThankYouForPlaying();
@@ -108,20 +102,13 @@ public class GameManager : MonoBehaviour
 
     public void Test()
     {
-        if (testProfileSO.IsDeviceTest())
-        {
-            AdManager.Instance.test.SetActive(true);
-            fpsDisplay.enabled = true;
-            uiCheat.SetActive(true);
-        }
+        
     }
 
     public void CheckShowInAppReview()
     {
         if (gameProfileSO.currentLevelIndex >= 4 && !dataManager.Data.InAppReview)
         {
-            inAppReview.ShowRateCanvas();
-
             dataManager.Data.InAppReview = true;
             dataManager.SaveData();
         }

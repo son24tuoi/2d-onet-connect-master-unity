@@ -178,8 +178,6 @@ public class LevelController : MyMonoBehaviour, IEventHandler
         gamePlayCanvas.Init();
 
         SetupCamera();
-
-        FirebaseManager.firebaseAnalytics.EventLevelStart(gameProfileSO.currentLevelIndex);
     }
 
     private void SetupCamera()
@@ -342,7 +340,6 @@ public class LevelController : MyMonoBehaviour, IEventHandler
             DataManager.SetIsStartingPlay(true);
         });
 
-        FirebaseManager.firebaseAnalytics.EventLevelEnd(gameProfileSO.currentLevelIndex, gameProfileSO.elapsedSeconds);
     }
 
     public void Lose()

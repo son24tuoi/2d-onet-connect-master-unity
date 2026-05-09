@@ -73,8 +73,6 @@ namespace Background
                     {
                         timeOfDay = target.timeOfDay
                     };
-
-                    FirebaseUtilities.SaveJsonData(backgroundRemote, "background.json");
                 }
             }
         }

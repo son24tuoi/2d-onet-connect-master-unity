@@ -17,8 +17,8 @@ public class RewardedAdController : MonoBehaviour
 
     // These ad units are configured to always serve test ads.
 #if UNITY_ANDROID
-    // private const string _adUnitId = "ca-app-pub-3940256099942544/5224354917"; // Test
-    private const string _adUnitId = "ca-app-pub-3685654137441776/9726613171";
+    private const string _adUnitId = "ca-app-pub-3940256099942544/5224354917"; // Test
+    // private const string _adUnitId = "ca-app-pub-3685654137441776/9726613171";
 #elif UNITY_IPHONE
         private const string _adUnitId = "ca-app-pub-3940256099942544/1712485313";
 #else
@@ -146,8 +146,6 @@ public class RewardedAdController : MonoBehaviour
             Debug.Log(String.Format("Rewarded ad paid {0} {1}.",
                 adValue.Value,
                 adValue.CurrencyCode));
-
-            FirebaseManager.Instance.firebaseAnalytics.EventAdImpression(adValue);
         };
         // Raised when an impression is recorded for an ad.
         ad.OnAdImpressionRecorded += () =>

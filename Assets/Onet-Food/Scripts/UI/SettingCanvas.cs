@@ -5,17 +5,10 @@ using UnityEngine.UI;
 
 public class SettingCanvas : Popup
 {
-    [Header("Element")]
-    [SerializeField] public InputField deviceId;
-
-    private int m_countClick = 0;
 
     protected override void OnEnable()
     {
         base.OnEnable();
-
-        deviceId.gameObject.SetActive(false);
-        m_countClick = 0;
     }
 
     public void OnClickExitButton()
@@ -25,23 +18,16 @@ public class SettingCanvas : Popup
 
     public void OnClickVersionText()
     {
-        m_countClick++;
-
-        if (m_countClick >= 5)
-        {
-            deviceId.SetTextWithoutNotify(SystemInfo.deviceUniqueIdentifier);
-            deviceId.gameObject.SetActive(true);
-            GameManager.Instance.Test();
-        }
+        
     }
 
     public void OnClickSaveCloudButton()
     {
-        GPGSManager.Instance.TryOpenSave(true);
+        
     }
 
     public void OnClickLoadCloudButton()
     {
-        GPGSManager.Instance.TryOpenSave(false);
+        
     }
 }

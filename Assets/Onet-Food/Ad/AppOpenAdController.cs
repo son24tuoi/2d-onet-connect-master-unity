@@ -20,8 +20,8 @@ public class AppOpenAdController : MonoBehaviour
 
     // These ad units are configured to always serve test ads.
 #if UNITY_ANDROID
-    // private const string _adUnitId = "ca-app-pub-3940256099942544/9257395921"; // Test
-    private const string _adUnitId = "ca-app-pub-3685654137441776/2039694845";
+    private const string _adUnitId = "ca-app-pub-3940256099942544/9257395921"; // Test
+    // private const string _adUnitId = "ca-app-pub-3685654137441776/2039694845";
 #elif UNITY_IPHONE
         private const string _adUnitId = "ca-app-pub-3940256099942544/5575463023";
 #else
@@ -156,8 +156,6 @@ public class AppOpenAdController : MonoBehaviour
             Debug.Log(String.Format("App open ad paid {0} {1}.",
                 adValue.Value,
                 adValue.CurrencyCode));
-
-            FirebaseManager.Instance.firebaseAnalytics.EventAdImpression(adValue);
         };
         // Raised when an impression is recorded for an ad.
         ad.OnAdImpressionRecorded += () =>
