@@ -19,7 +19,7 @@ MonoBehaviour:
     threeStar: 0.7
   timerData:
     m_started: 1
-    running: 0
+    running: 1
     finished: 0
     m_totalSeconds: 600
-    elapsedSeconds: 600
+    elapsedSeconds: 12.770079

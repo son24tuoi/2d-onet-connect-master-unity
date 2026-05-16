@@ -12,7 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c20502abe9e400843ac54f056e7059ca, type: 3}
   m_Name: ChestProfileSO
   m_EditorClassIdentifier: 
-  numberOfRequests: 88130000
+  numberOfRequests: 64000000c80000002c01000090010000f401000058020000bc0200002003000084030000e8030000
   rewards:
   - {fileID: 11400000, guid: f127b37769c95b54aabe1164108d607a, type: 2}
-  enableShowRewardCard: 1
+  - {fileID: 11400000, guid: d93aec6bc6f1dca4b913ae5dfccf0076, type: 2}
+  - {fileID: 11400000, guid: 7a743d7f274553b44a836f22608343b1, type: 2}
+  - {fileID: 11400000, guid: 5c9611ee7d3b75b4ea2c5296bdb2906b, type: 2}
+  - {fileID: 11400000, guid: daecad86b725752458943da9628adde5, type: 2}
+  - {fileID: 11400000, guid: 93f5cfa2f9c51e249b4a6954b3379310, type: 2}
+  - {fileID: 11400000, guid: 466ec5fefc30672418118fc1bc48311c, type: 2}
+  - {fileID: 11400000, guid: 01d1f9a10a4771a4491f9e93bc6fa977, type: 2}
+  - {fileID: 11400000, guid: 4e390d1e0d2d50e4f9078a949ee0aeda, type: 2}
+  - {fileID: 11400000, guid: f7f02e2f04f54304fa19aaac85d35bec, type: 2}
+  enableShowRewardCard: 0
